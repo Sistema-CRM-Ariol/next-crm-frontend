@@ -120,8 +120,12 @@
     }
 
     /* BRANDS */
-
     .brand__form {
+        @apply bg-white p-6 space-y-4 rounded-lg
+    }
+    
+    /* CATEGORY */
+    .category__form {
         @apply bg-white p-6 space-y-4 rounded-lg
     }
 }
