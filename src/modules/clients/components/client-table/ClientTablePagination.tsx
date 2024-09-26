@@ -14,7 +14,7 @@ export const ClientTablePagination = ({ page, totalPages }: Props) => {
 
     const handleChangePage = (page: number) => {
         setIsLoading(true);
-        router.push(`/admin/clients?page=${ page }`);
+        router.push(`/admin/clients/page/${ page }`);
         setIsLoading(false);
     }
 
