@@ -1,26 +1,35 @@
+"use server"
 import { ClientTable, getAllClients, TotalClientsCard } from "@/modules/clients";
+
+
+
+// export const revalidate = 300;
+// export const dynamicParams = true;
+
+export async function generateStaticParams(){
+    
+    const { meta } = await getAllClients();
+    let pages: { page: number }[] = [];
+
+    for (let index = 0; index < meta.page; index++) {
+        console.log(index)
+        pages = [...pages, { page: index }];
+    }
+
+    console.log({pages})
+    return [
+        1,
+        2,
+        3,
+        4,
+    ];
+}
+
 
 interface Params {
     params: { page: number }
 }
 
-
-export const revalidate = 300;
-export const dynamicParams = true;
-
-
-export async function generateStaticParams(){
-    
-    const { meta } = await getAllClients();
-    let pages: number[] = [];
-
-    for (let index = 0; index < meta.page; index++) {
-        console.log(index)
-        pages = [...pages, index];
-    }
-
-    return pages;
-}
 
 export default async function ClientsPaginationPage({ params }: Params) {
 

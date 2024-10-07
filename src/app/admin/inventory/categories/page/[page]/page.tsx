@@ -1,17 +1,14 @@
 import { CategoriesTable, getCategories, NewCategoryForm } from "@/modules/categories";
-import { Metadata } from "next";
 
 
 interface Params {
-    searchParams: { [key: string]: number | string | undefined }
+    params: { page: number }
 }
 
-export default async function CategoriesPage({ searchParams }: Params) {
+export default async function CategoriesPaginationPage({ params }: Params) {
 
     const categoriesResponse = await getCategories(
-        searchParams.page as number, 
-        searchParams.limit as number, 
-        searchParams.search as string
+        params.page as number, 
     );
 
 
@@ -23,10 +20,4 @@ export default async function CategoriesPage({ searchParams }: Params) {
             <CategoriesTable categoriesResponse={ categoriesResponse }/>
         </>
     );
-}
-
-
-
-export const metadata: Metadata = {
-    title: 'Categorias - CRM Ariol'
 }
