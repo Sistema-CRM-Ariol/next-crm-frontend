@@ -43,7 +43,7 @@ export const CategoriesTable = ({ categoriesResponse }: Props) => {
                                 <TableCell>{formatDate(category.createdAt)}</TableCell>
                                 <TableCell>{formatDate(category.updatedAt)}</TableCell>
                                 <TableCell>
-                                    {/* <EditCategoryModal category={ category }/> */}
+                                    <EditCategoryModal category={ category }/>
                                     <DeleteCategoryModal category={ category } />
                                 </TableCell>
                             </TableRow>
