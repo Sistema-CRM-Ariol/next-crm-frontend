@@ -128,4 +128,9 @@
     .category__form {
         @apply bg-white p-6 space-y-4 rounded-lg
     }
+
+    /* COMPANIES */
+    .company__form {
+        @apply bg-white p-6 space-y-6 rounded-lg
+    }
 }

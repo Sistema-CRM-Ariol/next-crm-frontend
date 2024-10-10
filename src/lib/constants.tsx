@@ -62,17 +62,21 @@ export const aplicationsMenu = [
         ]
     },
     {
-        name: 'Clientes',
-        path: '/admin/clients',
+        name: 'Contactos',
+        path: '/admin/contacts',
         icon: <UserMultipleIcon size={18}/>,
         children: [
             {
                 name: 'Contactos',
-                path: '/admin/clients',
+                path: '/admin/contacts/clients',
+            },
+            {
+                name: 'Empresas',
+                path: '/admin/contacts/companies',
             },
             {
                 name: 'Leads',
-                path: '/admin/clients/leads',
+                path: '/admin/contacts/leads',
             }
         ]
     },
