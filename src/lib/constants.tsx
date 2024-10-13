@@ -22,7 +22,7 @@ export const aplicationsMenu = [
         children: [
             {
                 name: 'Productos',
-                path: '/admin/inventory/productos',
+                path: '/admin/inventory/products',
             },
             {
                 name: 'Marcas',
