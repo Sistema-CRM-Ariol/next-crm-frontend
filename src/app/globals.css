@@ -133,4 +133,9 @@
     .company__form {
         @apply bg-white p-6 space-y-6 rounded-lg
     }
+
+    /* PROVIDER */
+    .provider__form {
+        @apply bg-white p-6 space-y-6 rounded-lg
+    }
 }
