@@ -2,12 +2,13 @@ import { Metadata } from "next";
 
 import { ClientTable, TotalClientsCard, getAllClients } from "@/modules/clients";
 
-interface Params {
-    params: { slug: string }
-    searchParams: { [key: string]: number | string | undefined }
+interface Props {
+    searchParams: Promise<{ [key: string]: string | number | undefined }>
 }
 
-export default async function ClientsPage({ params, searchParams }: Params) {
+export default async function ClientsPage(props: Props) {
+    
+    const searchParams = await props.searchParams
 
     const clientResponse = await getAllClients(searchParams.page as number, searchParams.limit as number, searchParams.search as string);
 

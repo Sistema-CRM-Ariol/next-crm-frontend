@@ -1,11 +1,14 @@
 import { Metadata } from 'next';
 import { BrandTable, getBrands, NewBrandForm } from '@/modules/brands';
 
-interface Params {
-    searchParams: { [key: string]: number | string | undefined }
+
+interface Props {
+    searchParams: Promise<{ [key: string]: string | number | undefined }>
 }
 
-export default async function BrandsPage({ searchParams }: Params) {
+export default async function BrandsPage(props: Props) {
+
+    const searchParams = await props.searchParams
 
     const getBrandsResponse = await getBrands(
         searchParams.page as number, 

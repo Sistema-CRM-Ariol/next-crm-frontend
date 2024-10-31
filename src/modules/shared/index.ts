@@ -1,3 +1,7 @@
+// ACTIONS
+export { searchRedirect } from './actions/search-redirect';
+
+
 // COMPONENTS
 export { AppsMenuItems } from './components/side-menu/AppsMenuItems';
 export { SideMenu } from "./components/side-menu/SideMenu";

@@ -1,20 +1,23 @@
 "use client"
 import { formatDate, tableClassNames } from '@/lib'
-import { type Provider } from '@/modules/providers'
+import { GetProvidersResponse, ProviderTableHeader, ProviderTablePagination } from '@/modules/providers'
 
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table'
 
 interface Props {
-    providers: Provider[]
+    getProvidersResponse: GetProvidersResponse,
 }
 
-export const ProviderTable = ({ providers }: Props) => {
+export const ProviderTable = ({ getProvidersResponse }: Props) => {
+
+    const { meta, providers } = getProvidersResponse;
+    
     return (
         <section className='container pt-8'>
             <Table
                 classNames={tableClassNames}
-                // topContent={<BrandTableHeader />}
-                // bottomContent={ <BrandTablePagination totalPages={ meta.lastPage } page={meta.page}/> }
+                topContent={<ProviderTableHeader />}
+                bottomContent={ <ProviderTablePagination totalPages={ meta.lastPage } page={meta.page}/> }
                 aria-label="Providers table"
             >
                 <TableHeader>

@@ -1,19 +1,18 @@
 import { CategoriesTable, getCategories, NewCategoryForm } from "@/modules/categories";
 import { Metadata } from "next";
 
-
-interface Params {
-    searchParams: { [key: string]: number | string | undefined }
+interface Props {
+    searchParams: Promise<{ [key: string]: string | number | undefined }>
 }
 
-export default async function CategoriesPage({ searchParams }: Params) {
+export default async function CategoriesPage(props: Props) {
+    const searchParams = await props.searchParams
 
     const categoriesResponse = await getCategories(
         searchParams.page as number, 
         searchParams.limit as number, 
         searchParams.search as string
     );
-
 
     return (
         <>

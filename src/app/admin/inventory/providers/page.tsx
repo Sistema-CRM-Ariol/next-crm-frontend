@@ -1,15 +1,27 @@
 import { Metadata } from "next";
 import { NewProviderForm, ProviderTable, getProviders } from "@/modules/providers"
 
-export default async function ProvidersPage() {
+type Params = Promise<{ page: string }>
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
-    const { data, error } = await getProviders();
 
+
+export default async function ProvidersPage(props: {
+    params: Params
+    searchParams: SearchParams
+}) {
+
+    const searchParams = await props.searchParams
+
+    const getProvidersResponse = await getProviders({
+        search: searchParams.query as string,
+        page: searchParams.page as string,
+    });
     return (
         <>
             <NewProviderForm/>
             <ProviderTable
-                providers={ data!.providers }
+                getProvidersResponse={ getProvidersResponse! }
             />
         </>
     );

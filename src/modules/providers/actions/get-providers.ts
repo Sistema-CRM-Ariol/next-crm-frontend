@@ -6,28 +6,32 @@ import apiDb from "@/lib/apiDb"
 import { GetProvidersResponse } from "@/modules/providers";
 
 
-export const getProviders = async () => {
+
+interface GetProvidersHeaders {
+    limit?: number | undefined,
+    page?: number | string | undefined, 
+    search?: string | undefined
+}
+
+export const getProviders = async ({ page = 1, limit = 10, search= undefined }: GetProvidersHeaders ) => {
+
 
     try {
         
-        const { data } = await apiDb.get<GetProvidersResponse>("/providers");
-
-        return {
-            data, 
-            error: null
-        }
+        const { data } = await apiDb.get<GetProvidersResponse>("/providers",{
+            params: {
+                page,
+                limit,
+                search
+            }
+        });
+        console.log(data)
+        return data
 
 
     } catch (error) {
         
         console.log(error)
-
-        if( isAxiosError(error) ){
-            return {
-                error: error.response?.data.message,
-                data: null
-            }
-        }
 
         throw error
 
