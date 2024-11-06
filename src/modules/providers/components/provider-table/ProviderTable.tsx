@@ -1,6 +1,6 @@
 "use client"
 import { formatDate, tableClassNames } from '@/lib'
-import { GetProvidersResponse, ProviderTableHeader, ProviderTablePagination } from '@/modules/providers'
+import { GetProvidersResponse, ProviderTableHeader, ProviderTablePagination, DeleteProviderModal } from '@/modules/providers'
 
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table'
 
@@ -57,7 +57,7 @@ export const ProviderTable = ({ getProvidersResponse }: Props) => {
                                 <TableCell>{formatDate(provider.createdAt)}</TableCell>
                                 <TableCell>{formatDate(provider.updatedAt)}</TableCell>
                                 <TableCell>
-                                    actions
+                                    <DeleteProviderModal/>
                                     {/* <EditBrandModal brand={ brand }/>
                                     <DeleteBrandModal brand={ brand } /> */}
                                 </TableCell>

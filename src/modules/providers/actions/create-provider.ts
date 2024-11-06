@@ -10,9 +10,9 @@ export const createProvider = async (formData: FormData) => {
 
     const provider = {
         name: formData.get('name') as string ,
-        phone1: formData.get('phone1') as string ,
-        phone2: formData.get('phone2') as string ,
-        direction: formData.get('direction') as string ,
+        phone1: formData.get('phone1') == '' ? undefined : formData.get('phone1') ,
+        phone2: formData.get('phone2') == '' ? undefined : formData.get('phone2') ,
+        direction: formData.get('direction') == '' ? undefined : formData.get('direction') ,
     }
 
     try {

@@ -2,10 +2,9 @@
 
 import { formatDate, tableClassNames } from '@/lib';
 
-import { CategoryTableHeader, DeleteCategoryModal, EditCategoryModal, GetCategoriesResponse } from '@/modules/categories';
 
+import { CategoriesTablePagination, CategoryTableHeader, DeleteCategoryModal, EditCategoryModal, GetCategoriesResponse } from '@/modules/categories';
 import { TableHeader, TableColumn, TableBody, TableRow, TableCell, Table } from '@nextui-org/react';
-import { CategoriesTablePagination } from './CategoriesTablePagination';
 
 
 interface Props {
@@ -19,10 +18,10 @@ export const CategoriesTable = ({ categoriesResponse }: Props) => {
     return (
         <section className='container pt-8'>
             <Table
+                aria-label="Categories table"
                 classNames={tableClassNames}
                 topContent={<CategoryTableHeader />}
                 bottomContent={ <CategoriesTablePagination totalPages={ meta.lastPage } page={meta.page}/> }
-                aria-label="Categories table"
             >
                 <TableHeader>
                     <TableColumn>ID</TableColumn>
@@ -35,7 +34,7 @@ export const CategoriesTable = ({ categoriesResponse }: Props) => {
                 <TableBody>
                     {
                         categories.map(category => (
-                            <TableRow key={category.id}>
+                            <TableRow as='li' key={category.id}>
                                 <TableCell width={200}>
                                     <p className='line-clamp-1'>{category.id}</p>
                                 </TableCell>

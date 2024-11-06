@@ -4,6 +4,7 @@ export { DeleteCategoryModal } from './components/categories-table/DeleteCategor
 export { CategoriesTable } from './components/categories-table/CategoriesTable'
 export { NewCategoryForm } from './components/NewCategoryForm';
 export { EditCategoryModal } from './components/categories-table/EditCategoryModal';
+export { CategoriesTablePagination } from './components/categories-table/CategoriesTablePagination';
 
 // HOOKS
 export { useNewCategoryForm } from './hooks/useNewCategoryForm';

@@ -29,7 +29,7 @@ export const AppsMenuItems = () => {
             {
                 aplicationsMenu.map(item => (
                     <AccordionItem
-                        as='li'
+                        // as='li'
                         startContent={item.icon}
                         key={item.path}
                         title={item.name}
