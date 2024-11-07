@@ -11,7 +11,7 @@ const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600",
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body className={outfit.className}>
         <Providers>
           {children}
