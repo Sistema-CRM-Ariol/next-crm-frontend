@@ -57,7 +57,7 @@ export const ProviderTable = ({ getProvidersResponse }: Props) => {
                                 <TableCell>{formatDate(provider.createdAt)}</TableCell>
                                 <TableCell>{formatDate(provider.updatedAt)}</TableCell>
                                 <TableCell>
-                                    <DeleteProviderModal/>
+                                    <DeleteProviderModal provider={provider}/>
                                     {/* <EditBrandModal brand={ brand }/>
                                     <DeleteBrandModal brand={ brand } /> */}
                                 </TableCell>

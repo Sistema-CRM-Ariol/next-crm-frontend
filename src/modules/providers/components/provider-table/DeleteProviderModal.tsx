@@ -1,34 +1,28 @@
 "use client"
-import { useState } from 'react'
-import { toast } from 'sonner';
+import { useEffect } from 'react'
 
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import { useDeleteProvider, type Provider } from '@/modules/providers';
+
+import { Button } from '@nextui-org/button';
 import { Alert01Icon, Delete02Icon } from 'hugeicons-react';
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal";
 
 
-export const DeleteProviderModal = () => {
 
-    const [isLoading, setIsLoading] = useState(false);
+interface Props {
+    provider: Provider;
+}
+
+export const DeleteProviderModal = ({ provider }: Props) => {
 
     const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+    const { handleDelete, isLoading } = useDeleteProvider(provider.id)
 
-    const handleDelete = async () => {
-        setIsLoading(true);
-
-        // const { data, error } = await deleteCategory( category.id );
-
-        // if( error ){
-        //     toast.error("Ocurrio un error", {
-        //         description: error
-        //     })
-        //     setIsLoading(false);
-        //     return;
-        // }
-
-        // toast.success(data?.message);
-        setIsLoading(false);
-        onClose();
-    }
+    useEffect(() => {
+        if( !isLoading )
+            onClose
+    }, [isLoading])
+    
 
     return (
         <>
@@ -52,11 +46,11 @@ export const DeleteProviderModal = () => {
                                 <div className='mx-auto text-red-500 bg-red-100 p-2 rounded-full'>
                                     <Alert01Icon size={30} />
                                 </div>
-                                Eliminar cliente
+                                Eliminar proveedor
                             </ModalHeader>
                             <ModalBody>
                                 <p>
-                                    ¿Esta seguro de eliminar la categoria <span className='text-primary-500'>  </span>? <br />
+                                    ¿Esta seguro de eliminar el proveedor <span className='text-primary-500'>{ provider.name }</span>? <br />
                                     <span className='text-red-500'>Todos sus datos asociados se perderan definitivamente</span>
                                 </p>
                             </ModalBody>
