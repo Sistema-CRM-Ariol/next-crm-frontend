@@ -25,9 +25,8 @@ export const getProviders = async ({ page = 1, limit = 10, search= undefined }: 
                 search
             }
         });
-        console.log(data)
-        return data
 
+        return data
 
     } catch (error) {
         

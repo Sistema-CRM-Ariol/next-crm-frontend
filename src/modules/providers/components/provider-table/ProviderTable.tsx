@@ -1,6 +1,6 @@
 "use client"
 import { formatDate, tableClassNames } from '@/lib'
-import { GetProvidersResponse, ProviderTableHeader, ProviderTablePagination, DeleteProviderModal } from '@/modules/providers'
+import { GetProvidersResponse, ProviderTableHeader, ProviderTablePagination, DeleteProviderModal, EditProviderModal } from '@/modules/providers'
 
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table'
 
@@ -19,6 +19,7 @@ export const ProviderTable = ({ getProvidersResponse }: Props) => {
                 topContent={<ProviderTableHeader />}
                 bottomContent={ <ProviderTablePagination totalPages={ meta.lastPage } page={meta.page}/> }
                 aria-label="Providers table"
+                // selectionMode='multiple'
             >
                 <TableHeader>
                     <TableColumn>ID</TableColumn>
@@ -57,6 +58,7 @@ export const ProviderTable = ({ getProvidersResponse }: Props) => {
                                 <TableCell>{formatDate(provider.createdAt)}</TableCell>
                                 <TableCell>{formatDate(provider.updatedAt)}</TableCell>
                                 <TableCell>
+                                    <EditProviderModal provider={provider}/>
                                     <DeleteProviderModal provider={provider}/>
                                     {/* <EditBrandModal brand={ brand }/>
                                     <DeleteBrandModal brand={ brand } /> */}
