@@ -1,13 +1,15 @@
-// ACTIONS
-export { searchRedirect } from './actions/search-redirect';
-
 
 // COMPONENTS
+export { TableTitle } from './components/table/TableTitle';
 export { AppsMenuItems } from './components/side-menu/AppsMenuItems';
-export { SideMenu } from "./components/side-menu/SideMenu";
-export { PrincipalMenuItems } from './components/side-menu/PrincipalMenuItems';
 export { NavMenu } from './components/nav-menu/NavMenu';
+export { PrincipalMenuItems } from './components/side-menu/PrincipalMenuItems';
+export { SideMenu } from "./components/side-menu/SideMenu";
+export { TableHeader } from '@nextui-org/react';
 export { TitlePage } from './components/TitlePage';
+
+// ACTIONS
+export { searchRedirect } from './actions/search-redirect';
 
 
 // ICONS

@@ -91,7 +91,7 @@ export const aplicationsMenu = [
             },
             {
                 name: 'Agregar usuario',
-                path: '/admin/users/new',
+                path: '/admin/users/register',
             }
         ]
     },
