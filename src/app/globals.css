@@ -143,4 +143,9 @@
     .role__permission__selector {
         @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8
     }
+
+    /* WAREHOUSE */
+    .warehouse__form {
+        @apply bg-white p-6 space-y-6 rounded-lg
+    }
 }
