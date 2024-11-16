@@ -1,7 +1,12 @@
 "use client"
 import { CheckboxGroup, Checkbox } from '@nextui-org/checkbox';
 
-export const RolePermissionSelector = () => {
+
+interface Props {
+    onChange: (module: string, actions: string[]) => void;
+};
+
+export const RolePermissionSelector = ({ onChange }: Props) => {
 
     const modules = [
         { name: "Clientes", value: "clients" },
@@ -17,7 +22,12 @@ export const RolePermissionSelector = () => {
         { name: "Crear", value: "create" },
         { name: "Editar", value: "update" },
         { name: "Eliminar", value: "remove" },
+        { name: "Reportes", value: "reports" },
     ]
+    
+    const handleCheckboxChange = (module: string, selectedActions: string[]) => {
+        onChange(module, selectedActions);
+    };
 
     return (
         <div>
@@ -31,10 +41,11 @@ export const RolePermissionSelector = () => {
 
                             <CheckboxGroup
                                 label="Selecciona las acciones permitidas"
+                                onChange={(selected) => handleCheckboxChange(module.value, selected)}
                             >
                                 {
                                     actions.map(action => (
-                                        <Checkbox value={action.name} key={action.value}>
+                                        <Checkbox value={action.value} key={action.value}>
                                             {action.name}
                                         </Checkbox>
                                     ))

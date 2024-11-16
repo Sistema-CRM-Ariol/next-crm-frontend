@@ -1,18 +1,22 @@
-
+"use client"
 import { Button } from "@nextui-org/button";
-import { UserDataForm, RolePermissionSelector } from '@/modules/users';
+import { UserDataForm, RolePermissionSelector, useNewUserForm } from '@/modules/users';
 import { Divider } from "@nextui-org/react";
 
 
+
 export const NewUserForm = () => {
+
+    const { handlePermissionsChange, handleSubmit, handleUserDataChange } = useNewUserForm();
+
     return (
 
         <section className='pt-8'>
-            <form className='container bg-white p-6 pt-8 pb-10 rounded-sm'>
+            <form onSubmit={handleSubmit} className='container bg-white p-6 pt-8 pb-10 rounded-sm'>
 
-                <UserDataForm/>
-                <Divider className="my-4"/>
-                <RolePermissionSelector/>
+                <UserDataForm onChange={handleUserDataChange}/>
+                <Divider className="my-4" />
+                <RolePermissionSelector onChange={handlePermissionsChange}/>
 
                 <Button
                     color='primary'

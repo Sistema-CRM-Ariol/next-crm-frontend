@@ -5,8 +5,11 @@ import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 import { IdentificationIcon, ImageAdd01Icon, LockPasswordIcon, UserIcon } from 'hugeicons-react';
 
+interface Props {
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
-export const UserDataForm = () => {
+export const UserDataForm = ({ onChange }: Props) => {
     return (
         <>
             <h2>Datos del usuario</h2>
@@ -19,7 +22,8 @@ export const UserDataForm = () => {
                     startContent={<UserIcon size={20} />}
                     placeholder='Ingresa un nombre'
                     label="Nombre"
-                    name='nombre'
+                    name='name'
+                    onChange={onChange}
                     labelPlacement='outside'
                 />
 
@@ -31,6 +35,7 @@ export const UserDataForm = () => {
                     placeholder='Ingresa los apellidos'
                     label="Apellidos"
                     name='lastname'
+                    onChange={onChange}
                     labelPlacement='outside'
                 />
 
@@ -41,6 +46,7 @@ export const UserDataForm = () => {
                     startContent={<IdentificationIcon size={20} />}
                     placeholder='Ingresa un correo electonico'
                     label="Correo electronico"
+                    onChange={onChange}
                     name='email'
                     labelPlacement='outside'
                 />
@@ -52,6 +58,7 @@ export const UserDataForm = () => {
                     startContent={<IdentificationIcon size={20} />}
                     placeholder='Ingresa el C.I.'
                     label="Carnet de Identidad"
+                    onChange={onChange}
                     name="ci"
                     labelPlacement='outside'
                 />
@@ -67,6 +74,7 @@ export const UserDataForm = () => {
                         label="Contraseña"
                         name="password"
                         type='password'
+                        onChange={onChange}
                         labelPlacement='outside'
                     />
 
@@ -76,10 +84,11 @@ export const UserDataForm = () => {
                 <Input
                     size='lg'
                     type='file'
-                    isRequired
+                    // isRequired
                     classNames={fullInputWrapper}
                     startContent={<ImageAdd01Icon size={20} />}
                     placeholder='Agrega una imagen del usuario'
+                    onChange={onChange}
                     label="Imagen de perfil"
                     name="avatar"
                     labelPlacement='outside'
