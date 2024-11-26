@@ -22,7 +22,7 @@ export const RolePermissionSelector = ({ onChange }: Props) => {
         { name: "Crear", value: "create" },
         { name: "Editar", value: "update" },
         { name: "Eliminar", value: "remove" },
-        { name: "Reportes", value: "reports" },
+        { name: "Reportes", value: "report" },
     ]
     
     const handleCheckboxChange = (module: string, selectedActions: string[]) => {

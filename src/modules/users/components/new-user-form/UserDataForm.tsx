@@ -72,6 +72,7 @@ export const UserDataForm = ({ onChange }: Props) => {
                         startContent={<LockPasswordIcon size={20} />}
                         placeholder='Ingresa una contraseña segura'
                         label="Contraseña"
+                        autoComplete=""
                         name="password"
                         type='password'
                         onChange={onChange}

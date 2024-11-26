@@ -2,6 +2,7 @@
 import { ChangeEvent, useState } from "react";
 import { createUser } from "../actions/create-user";
 import { UserData } from "../interfaces/user-data";
+import { toast } from "sonner";
 
 
 export const useNewUserForm = () => {
@@ -38,8 +39,16 @@ export const useNewUserForm = () => {
             permissions: formattedPermissions,
         };
 
-        await createUser(JSON.stringify( newUser ))
+        const { data, error } = await createUser(JSON.stringify( newUser ))
         
+        if (error) {        
+            toast.error(error);
+            setIsLoading(false);
+            return;
+        }
+
+        toast.success(data?.message);
+    
         setIsLoading(false);
 
     };
