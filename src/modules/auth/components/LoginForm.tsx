@@ -1,28 +1,20 @@
 "use client"
+import Link from 'next/link';
 import { useState } from 'react'
 
-import { Input } from '@nextui-org/input'
-import { Button } from '@nextui-org/button';
-import { Checkbox, button } from '@nextui-org/react';
+import { fullInputWrapper } from '@/lib';
+import { useLoginUser } from '@/modules/auth';
 import { ViewIcon, ViewOffIcon } from '@/modules/shared';
-import Link from 'next/link';
+
+import { Checkbox, Button, Input } from '@nextui-org/react';
 
 export const LoginForm = () => {
 
-    const inputWrapper = [
-        "shadow-none",
-        "bg-athens-gray",
-        "rounded-md",
-        "outline-none",
-        "group-data-[focus=true]:bg-athens-gray",
-    ]
-    const label = "font-medium"
-
-
     const [showPassword, setShowPassword] = useState(false);
+    const { handleSubmit, isLoading } = useLoginUser();
 
     return (
-        <form className='login__form w-full space-y-6'>
+        <form onSubmit={handleSubmit} className='login__form w-full space-y-6'>
 
             <div className='mb-[3rem] text-center'>
                 <h1 className="text-3xl mb-2 font-normal">Bienvenido de nuevo! 👋</h1>
@@ -33,20 +25,14 @@ export const LoginForm = () => {
                 label="Correo electronico"
                 name='email'
                 type='email'
-                classNames={{
-                    inputWrapper,
-                    label,
-                }}
+                classNames={fullInputWrapper}
             />
 
             <Input
                 name='password'
                 size='sm'
                 label="Contraseña"
-                classNames={{
-                    inputWrapper,
-                    label
-                }}
+                classNames={fullInputWrapper}
                 type={showPassword ? "text" : "password"}
                 endContent={
                     <Button variant='light' size='sm' isIconOnly onClick={() => setShowPassword(!showPassword)}>
@@ -69,7 +55,10 @@ export const LoginForm = () => {
             </div>
 
             <Button
+                type='submit'
                 fullWidth
+                isLoading={ isLoading }
+                isDisabled={ isLoading }
                 color='primary'
             >
                 Iniciar Sesion
