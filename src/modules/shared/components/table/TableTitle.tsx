@@ -26,7 +26,7 @@ export const TableTitle = ({ description, placeholder, title }: Props) => {
 
 
     return (
-        <>
+        <div>
             <div className='mb-4'>
                 <h1>{ title }</h1>
                 <p className='text-sm'>{ description }</p>
@@ -53,6 +53,6 @@ export const TableTitle = ({ description, placeholder, title }: Props) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

@@ -5,8 +5,10 @@ import { IClientsResponse } from '@/modules/clients';
 
 import { ClientTableHeader } from './ClientTableHeader';
 import { ClientTableDeleteAction } from './ClientTableDeleteAction';
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
 import { ClientTablePagination } from './ClientTablePagination';
+import { useRouter } from 'next/navigation';
+import { EyeIcon } from 'hugeicons-react';
 
 
 interface Props {
@@ -14,6 +16,8 @@ interface Props {
 }
 
 export const ClientTable = ({ clientResponse }: Props) => {
+
+    const router = useRouter();
 
     const { clientes, meta } = clientResponse;
 
@@ -26,7 +30,7 @@ export const ClientTable = ({ clientResponse }: Props) => {
     return (
         <section className='container pt-8'>
             <Table
-                topContent={<ClientTableHeader />}
+                topContent={<ClientTableHeader/>}
                 bottomContent={ <ClientTablePagination totalPages={ meta.lastPage } page={meta.page}/> }
                 aria-label="Example table with custom cells, pagination and sorting"
                 bottomContentPlacement="outside"
@@ -36,7 +40,6 @@ export const ClientTable = ({ clientResponse }: Props) => {
                     },
                 }}
                 classNames={classNames}
-            // topContentPlacement="outside"
             >
                 <TableHeader>
                     <TableColumn>Nro Cliente</TableColumn>
@@ -71,6 +74,7 @@ export const ClientTable = ({ clientResponse }: Props) => {
                                 <TableCell>{cliente.factura}</TableCell>
                                 <TableCell>{cliente.nit}</TableCell>
                                 <TableCell>
+                                    <Button isIconOnly size='sm' color='primary' variant='light' startContent={ <EyeIcon size={18}/> } onPress={() => router.push(`/admin/contacts/clients/${ cliente.id }`) } />
                                     <ClientTableDeleteAction client={ cliente } />
                                 </TableCell>
                             </TableRow>

@@ -5,11 +5,11 @@ import { redirect } from "next/navigation";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
 
-    const isValidToken = await validateToken();
+    // const isValidToken = await validateToken();
 
-    if( !isValidToken ){
-        redirect('/auth/login');
-    }
+    // if( !isValidToken ){
+    //     redirect('/auth/login');
+    // }
 
     return (
         <>
