@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 
-import { IClientsResponse } from '@/modules/clients';
+import { ButtonScheduleAppointment, IClientsResponse } from '@/modules/clients';
 
 import { ClientTableHeader } from './ClientTableHeader';
 import { ClientTableDeleteAction } from './ClientTableDeleteAction';
@@ -73,7 +73,8 @@ export const ClientTable = ({ clientResponse }: Props) => {
                                 <TableCell>{cliente.correos[0] ? cliente.correos[0] : 'No agregados'}</TableCell>
                                 <TableCell>{cliente.factura}</TableCell>
                                 <TableCell>{cliente.nit}</TableCell>
-                                <TableCell>
+                                <TableCell className='flex'>
+                                    <ButtonScheduleAppointment client={ cliente }/>
                                     <Button isIconOnly size='sm' color='primary' variant='light' startContent={ <EyeIcon size={18}/> } onPress={() => router.push(`/admin/contacts/clients/${ cliente.id }`) } />
                                     <ClientTableDeleteAction client={ cliente } />
                                 </TableCell>

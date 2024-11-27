@@ -1,4 +1,6 @@
 // COMPONENTS
+export { ButtonScheduleAppointment } from './components/ButtonScheduleAppointment';
+
 export { ClientTopPurchases } from './components/ClientTopPurchases';
 export { ClientTable } from "./components/client-table/ClientTable";
 export { NewClientForm } from './components/NewClientForm';
