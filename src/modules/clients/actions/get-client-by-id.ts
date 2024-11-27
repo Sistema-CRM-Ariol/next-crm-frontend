@@ -2,12 +2,13 @@
 
 import apiDb from "@/lib/apiDb";
 import { isAxiosError } from "axios";
+import { IClient } from "../interfaces/client";
 
 
 export const getClientById = async (id: string) => {
     try {
         
-        const { data } = await apiDb.get(`/clients/${id}`);
+        const { data } = await apiDb.get<{ client: IClient}>(`/clients/${id}`);
         
         return {
             data,
