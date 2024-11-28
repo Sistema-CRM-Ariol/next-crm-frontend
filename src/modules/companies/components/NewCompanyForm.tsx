@@ -16,7 +16,7 @@ export const NewCompanyForm = () => {
             <div className="container">
 
                 <form onSubmit={handleSubmit} className='company__form'>
-                    
+
                     <div>
                         <h2 className='!mb-0'>Nueva empresa</h2>
                         <p>Registra nuevas empresas asociadas a tus clientes</p>
@@ -34,20 +34,21 @@ export const NewCompanyForm = () => {
                         />
 
                         <Input
-                            name='description'
-                            classNames={fullInputWrapper}
-                            placeholder='Ingrese una pequeña descripción'
-                            label="Descipcion"
-                            size='sm'
-                        />
-                        
-                        <Input
                             name='direction'
                             classNames={fullInputWrapper}
                             placeholder='Ingrese la direccion de la empresa'
                             label="Dirección"
                             size='sm'
                         />
+                        
+                        <Input
+                            name='description'
+                            classNames={fullInputWrapper}
+                            placeholder='Ingrese una pequeña descripción'
+                            label="Descipcion"
+                            size='sm'
+                        />
+
                     </div>
 
                     <Button

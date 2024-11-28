@@ -3,10 +3,12 @@ import { useState } from "react"
 import { toast } from "sonner";
 
 import { loginUser } from "@/modules/auth";
+import { useRouter } from 'next/navigation';
 
 
 export const useLoginUser = () => {
 
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -34,6 +36,7 @@ export const useLoginUser = () => {
         
         setIsLoading(false);
 
+        router.push('/admin/dashboard');
     }
 
 

@@ -1,4 +1,3 @@
-
 // COMPONENTS
 export { TableTitle } from './components/table/TableTitle';
 export { AppsMenuItems } from './components/side-menu/AppsMenuItems';
@@ -7,6 +6,7 @@ export { PrincipalMenuItems } from './components/side-menu/PrincipalMenuItems';
 export { SideMenu } from "./components/side-menu/SideMenu";
 export { TableHeader } from '@nextui-org/react';
 export { TitlePage } from './components/TitlePage';
+export { TablePaginationButtons } from './components/table/TablePaginationButtons';
 
 // ACTIONS
 export { searchRedirect } from './actions/search-redirect';

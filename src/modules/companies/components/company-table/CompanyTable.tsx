@@ -1,48 +1,65 @@
 "use client"
 import { formatDate, tableClassNames } from '@/lib'
 
-import { CompanyTableHeader } from '@/modules/companies'
-
+import { GetCompaniesResponse } from '@/modules/companies'
+import { TablePaginationButtons, TableTitle } from '@/modules/shared'
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import { DeleteCompanyModal } from './DeleteCompanyModal'
 
-export const CompanyTable = () => {
+interface Props {
+    companiesResponse: GetCompaniesResponse;
+}
+
+
+export const CompanyTable = ({ companiesResponse }: Props) => {
+
+    const { companies, meta } = companiesResponse;
+
     return (
         <section className='pt-8'>
             <Table
                 className='container'
                 classNames={tableClassNames}
-                topContent={<CompanyTableHeader />}
-                // bottomContent={<BrandTablePagination totalPages={meta.lastPage} page={meta.page} />}
+                topContent={<TableTitle title='Gestion de empresas' description='Gestiona las empresas asociadas a tus clientes' placeholder='Buscar empresas'/>}
+                bottomContent={<TablePaginationButtons page={meta.page} totalPages={meta.lastPage} />}
                 aria-label="Company table"
             >
                 <TableHeader>
                     <TableColumn>ID</TableColumn>
                     <TableColumn>Nombre</TableColumn>
-                    <TableColumn>Descripción</TableColumn>
                     <TableColumn>Dirección</TableColumn>
+                    <TableColumn>Descripción</TableColumn>
                     <TableColumn>F. Creación</TableColumn>
                     <TableColumn>F. Actualización</TableColumn>
                     <TableColumn>Acciones</TableColumn>
                 </TableHeader>
 
                 <TableBody>
-                    <TableRow>
-                        <TableCell width={200}>
-                            <p className='line-clamp-1'>X</p>
-                        </TableCell>
-                        <TableCell>X</TableCell>
-                        <TableCell>
-                            <p className='line-clamp-1'>Alguna descripcion X</p>
-                        </TableCell>
-                        <TableCell>
-                            <p className='line-clamp-1'>Alguna direccion X</p>
-                        </TableCell>
-                        <TableCell>Alguna fecha X</TableCell>
-                        <TableCell>Alguna fecha X</TableCell>
-                        <TableCell>
-                            Acciones
-                        </TableCell>
-                    </TableRow>
+                    {
+                        companies.map(company => (
+                            <TableRow key={company.id}>
+                                <TableCell width={200}>
+                                    <p className='line-clamp-1'>{company.id}</p>
+                                </TableCell>
+                                <TableCell>{company.name}</TableCell>
+                                <TableCell>
+                                    <p className='line-clamp-1'>
+                                        {company.direction}
+                                    </p>
+                                </TableCell>
+                                <TableCell>
+                                    <p className='line-clamp-1'>
+                                        {company.description.trim() === '' ? 'Sin descripción' : company.description}
+                                    </p>
+                                </TableCell>
+                                <TableCell>{formatDate(company.createdAt)}</TableCell>
+                                <TableCell>{formatDate(company.updatedAt)}</TableCell>
+                                <TableCell>
+                                    <DeleteCompanyModal company={company} />
+                                </TableCell>
+                            </TableRow>
+                        ))
+                    }
 
 
                 </TableBody>
