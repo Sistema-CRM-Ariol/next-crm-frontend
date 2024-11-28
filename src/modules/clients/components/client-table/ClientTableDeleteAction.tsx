@@ -1,14 +1,14 @@
 "use client"
 import { useState } from 'react';
 
-import { IClient, deleteClient } from '@/modules/clients';
+import { SimpleClient, deleteClient } from '@/modules/clients';
 
 import { Alert01Icon, Delete02Icon } from 'hugeicons-react';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import { toast } from 'sonner';
 
 interface Props {
-    client: IClient
+    client: SimpleClient
 }
 
 export const ClientTableDeleteAction = ({ client }: Props) => {
@@ -61,7 +61,7 @@ export const ClientTableDeleteAction = ({ client }: Props) => {
                             </ModalHeader>
                             <ModalBody>
                                 <p>
-                                    ¿Esta seguro de eliminar el cliente <span className='text-primary-500'>"{ client.nombre }"</span>? <br />
+                                    ¿Esta seguro de eliminar el cliente <span className='text-primary-500'>"{ client.name }"</span>? <br />
                                     <span className='text-red-500'>Todos sus datos se perderan definitivamente</span>
                                 </p>
                             </ModalBody>

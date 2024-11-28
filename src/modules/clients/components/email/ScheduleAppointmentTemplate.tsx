@@ -1,7 +1,3 @@
-
-import dateIcon from '../../../../assets/images/calendar-icon.png'
-import Image from 'next/image';
-
 interface Props {
     name: string;
     date: string;

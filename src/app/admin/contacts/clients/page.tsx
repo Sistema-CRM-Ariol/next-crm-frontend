@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { ClientTable, TotalClientsCard, getAllClients } from "@/modules/clients";
+import { ClientTable, getClients, TotalClientsCard } from "@/modules/clients";
 
 interface Props {
     searchParams: Promise<{ [key: string]: string | number | undefined }>
@@ -10,7 +10,7 @@ export default async function ClientsPage(props: Props) {
     
     const searchParams = await props.searchParams
 
-    const clientResponse = await getAllClients(searchParams.page as number, searchParams.limit as number, searchParams.search as string);
+    const clientResponse = await getClients(searchParams.page as number, searchParams.limit as number, searchParams.search as string);
 
     return (
         <>

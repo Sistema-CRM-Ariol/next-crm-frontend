@@ -1,16 +1,15 @@
 "use client"
-import { Mail01Icon } from 'hugeicons-react';
-import { getLocalTimeZone, now, toTime, toLocalTimeZone, toCalendarDateTime } from '@internationalized/date';
-import { Button, DatePicker, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react'
 import { useState } from 'react';
+import { Mail01Icon } from 'hugeicons-react';
+import { getLocalTimeZone, now} from '@internationalized/date';
+
 import { formatDate } from '@/lib';
-import { scheduleAppointmentWithClient } from '../actions/schedule-appointment-with-client';
-import { IClient } from '../interfaces/client';
-// import { ScheduleAppointmentTemplate } from './email/ScheduleAppointmentTemplate';
+import { SimpleClient, scheduleAppointmentWithClient } from '@/modules/clients';
+import { Button, DatePicker, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react'
 
 
 interface Props {
-    client: IClient;
+    client: SimpleClient;
 }
 
 export const ButtonScheduleAppointment = ({ client }: Props) => {
@@ -21,8 +20,7 @@ export const ButtonScheduleAppointment = ({ client }: Props) => {
     const handleSubmit = async () => {
         console.log(formatDate(date.toDate()))
 
-        await scheduleAppointmentWithClient( client.nombre, client.correos[0], formatDate(date.toDate()));
-
+        await scheduleAppointmentWithClient( client.name, client.emails[0], formatDate(date.toDate()));
     }
 
     return (

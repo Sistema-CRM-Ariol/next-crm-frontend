@@ -1,3 +1,4 @@
+"use client"
 import { useRouter } from 'next/navigation'
 
 import { TableTitle } from '@/modules/shared'
@@ -18,7 +19,7 @@ export const ClientTableHeader = () => {
             />
             <div className="flex gap-3">
                 <Button
-                    onPress={() => router.push('/admin/clients/new')}
+                    onPress={() => router.push('/admin/contacts/clients/new')}
                     endContent={<PlusSignIcon size={18} />}
                     size="md"
                     color='primary'
@@ -26,7 +27,7 @@ export const ClientTableHeader = () => {
                     Agregar Cliente
                 </Button>
                 <Button
-                    onPress={() => router.push('/admin/clients/new')}
+                    onPress={() => router.push('/admin/contacts/clients/new')}
                     endContent={<Download01Icon size={18} />}
                     size="md"
                     className='bg-indigo-500 text-white'

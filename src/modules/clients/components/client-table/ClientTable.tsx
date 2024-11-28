@@ -1,82 +1,62 @@
 "use client"
-import React from 'react';
-
-import { ButtonScheduleAppointment, IClientsResponse } from '@/modules/clients';
-
-import { ClientTableHeader } from './ClientTableHeader';
-import { ClientTableDeleteAction } from './ClientTableDeleteAction';
-import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
-import { ClientTablePagination } from './ClientTablePagination';
 import { useRouter } from 'next/navigation';
+
+import { tableClassNames } from '@/lib';
+import { TablePaginationButtons } from '@/modules/shared';
+import { ClientTableDeleteAction } from './ClientTableDeleteAction';
+import { ButtonScheduleAppointment, type GetClientsResponse, ClientTableHeader } from '@/modules/clients';
+
 import { EyeIcon } from 'hugeicons-react';
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+
 
 
 interface Props {
-    clientResponse: IClientsResponse;
+    clientResponse: GetClientsResponse;
 }
 
 export const ClientTable = ({ clientResponse }: Props) => {
 
     const router = useRouter();
 
-    const { clientes, meta } = clientResponse;
-
-    const classNames = React.useMemo(() => ({
-        wrapper: ["bg-white", "rounded-md", "shadow-none"],
-        th: ["bg-transparent", "text-default-500", "border-b", "border-divider", "text-base"],
-        tr: ["hover:bg-gray-400/10", "cursor-pointer", "transition-all"]
-    }), []);
+    const { clients, meta } = clientResponse;
 
     return (
         <section className='container pt-8'>
             <Table
+                aria-label="Tabla para la gestion de clientes"
                 topContent={<ClientTableHeader/>}
-                bottomContent={ <ClientTablePagination totalPages={ meta.lastPage } page={meta.page}/> }
-                aria-label="Example table with custom cells, pagination and sorting"
-                bottomContentPlacement="outside"
-                checkboxesProps={{
-                    classNames: {
-                        wrapper: "after:bg-foreground after:text-background text-background",
-                    },
-                }}
-                classNames={classNames}
+                bottomContent={ <TablePaginationButtons totalPages={ meta.lastPage } page={meta.page}/> }
+                classNames={tableClassNames}
             >
                 <TableHeader>
-                    <TableColumn>Nro Cliente</TableColumn>
+                    <TableColumn>NIT</TableColumn>
                     <TableColumn>Nombre</TableColumn>
                     <TableColumn>Cargo</TableColumn>
-                    <TableColumn>Empresa</TableColumn>
                     <TableColumn>Direccion</TableColumn>
-                    <TableColumn>Telefonos</TableColumn>
                     <TableColumn>Correo</TableColumn>
-                    <TableColumn>Factura</TableColumn>
-                    <TableColumn>NIT</TableColumn>
+                    <TableColumn>Telefono</TableColumn>
                     <TableColumn>Acciones</TableColumn>
                 </TableHeader>
-                <TableBody emptyContent={"No users found"}>
+                <TableBody emptyContent={"No se encontradron clientes"}>
                     {
-                        clientes.map(cliente => (
+                        clients.map(client => (
 
-                            <TableRow key={cliente.id} >
+                            <TableRow key={client.id} >
                                 <TableCell className='max-w-[100px]'>
                                     <p className='line-clamp-1'>
-                                        {cliente.id}
+                                        {client.nit}
                                     </p>
                                 </TableCell>
-                                <TableCell>{cliente.nombre}</TableCell>
-                                <TableCell>{cliente.cargo}</TableCell>
-                                <TableCell>
-                                    {cliente.empresa ? cliente.empresa : 'Sin asignar'}
-                                </TableCell>
-                                <TableCell>{cliente.direccion}</TableCell>
-                                <TableCell>{cliente.telefonos[0] ? cliente.telefonos[0] : 'No agregados'}</TableCell>
-                                <TableCell>{cliente.correos[0] ? cliente.correos[0] : 'No agregados'}</TableCell>
-                                <TableCell>{cliente.factura}</TableCell>
-                                <TableCell>{cliente.nit}</TableCell>
+                                <TableCell>{client.name}</TableCell>
+                                <TableCell>{client.position}</TableCell>
+                                <TableCell>{client.address}</TableCell>
+                                <TableCell>{client.phones[0] ? client.phones[0] : 'No agregados'}</TableCell>
+                                <TableCell>{client.emails[0] ? client.emails[0] : 'No agregados'}</TableCell>
                                 <TableCell className='flex'>
-                                    <ButtonScheduleAppointment client={ cliente }/>
-                                    <Button isIconOnly size='sm' color='primary' variant='light' startContent={ <EyeIcon size={18}/> } onPress={() => router.push(`/admin/contacts/clients/${ cliente.id }`) } />
-                                    <ClientTableDeleteAction client={ cliente } />
+                                    <ButtonScheduleAppointment client={ client }/>
+                                    <Button isIconOnly size='sm' color='primary' variant='light' startContent={ <EyeIcon size={18}/> } onPress={() => router.push(`/admin/contacts/clients/${ client.id }`) } />
+                                    <ClientTableDeleteAction client={ client } />
                                 </TableCell>
                             </TableRow>
                         ))

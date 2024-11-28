@@ -1,4 +1,4 @@
-import { ClientProfileCard, ClientTopPurchases, CustomerTaskTable, getAllClients, getClientById } from "@/modules/clients";
+import { ClientProfileCard, ClientTopPurchases, CustomerTaskTable, getClientById, getClients } from "@/modules/clients";
 import { TitlePage } from "@/modules/shared";
 
 interface Props {
@@ -36,9 +36,9 @@ export default async function ClientPage({ params }: Props) {
 
 
 export async function generateStaticParams() {
-    const data = await getAllClients(1, 100);
+    const data = await getClients(1, 100);
 
-    return data.clientes.map((client) => ({
+    return data.clients.map((client) => ({
         id: client.id,
     }))
 }
