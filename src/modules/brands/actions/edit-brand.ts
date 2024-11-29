@@ -5,9 +5,9 @@ import { revalidatePath } from "next/cache";
 import { Brand } from "../interfaces/brand";
 
 
-export const editBrand = async (id: string , nombre: string, descripcion: string | undefined ) => {
+export const editBrand = async (id: string , name: string, description: string | undefined ) => {
     try {
-        const { data } = await apiDb.patch<{ message: string, marca: Brand }>(`/brands/${ id }`, { nombre, descripcion })
+        const { data } = await apiDb.patch<{ message: string, marca: Brand }>(`/brands/${ id }`, { name, description })
 
         revalidatePath('/admin/inventory/brands');
 

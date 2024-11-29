@@ -43,16 +43,16 @@ export const EditBrandModal = ({ brand }: Props) => {
                                     label="Nombre"
                                     placeholder='Agrega un nombre'
                                     size='sm'
-                                    defaultValue={brand.nombre}
-                                    name='nombre'
+                                    defaultValue={brand.name}
+                                    name='name'
                                     isRequired
                                 />
 
                                 <Input
-                                    name='descripcion'
+                                    name='description'
                                     classNames={fullInputWrapper}
                                     placeholder='Ingrese una pequeña descripción'
-                                    defaultValue={brand.descripcion ?? ''}
+                                    defaultValue={brand.description ?? ''}
                                     label="Descipcion"
                                     size='sm'
                                 />

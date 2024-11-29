@@ -1,8 +1,7 @@
-
 export interface Brand {
     id:          string;
-    nombre:      string;
-    descripcion: null;
+    name:        string;
+    description: string;
     createdAt:   Date;
     updatedAt:   Date;
 }

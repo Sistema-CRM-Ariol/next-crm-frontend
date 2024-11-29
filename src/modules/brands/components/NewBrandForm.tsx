@@ -12,7 +12,7 @@ export const NewBrandForm = () => {
     return (
         <form onSubmit={ handleSubmit } className='brand__form'>
 
-                <h2>Registra una nueva marca</h2>
+            <h2>Registra una nueva marca</h2>
             <div className='flex md:flex-row items-center justify-between gap-4'>
 
                 <Input
@@ -20,15 +20,15 @@ export const NewBrandForm = () => {
                     label="Nombre"
                     placeholder='Agrega un nombre'
                     size='sm'
-                    name='nombre'
+                    name='name'
                     isRequired
                 />
 
                 <Input
-                    name='descripcion'
+                    name='description'
                     classNames={fullInputWrapper}
                     placeholder='Ingrese una pequeña descripción'
-                    label="Descipcion"
+                    label="Desciprion"
                     size='sm'
                 />
             </div>

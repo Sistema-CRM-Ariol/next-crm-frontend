@@ -64,7 +64,7 @@ export const DeleteBrandModal = ({ brand }: Props) => {
                             </ModalHeader>
                             <ModalBody>
                                 <p>
-                                    ¿Esta seguro de eliminar la marca <span className='text-primary-500'>"{ brand.nombre }"</span>? <br />
+                                    ¿Esta seguro de eliminar la marca <span className='text-primary-500'>"{ brand.name }"</span>? <br />
                                     <span className='text-red-500'>Todos sus datos se perderan definitivamente</span>
                                 </p>
                             </ModalBody>

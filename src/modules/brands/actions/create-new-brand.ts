@@ -7,11 +7,11 @@ import { CreateNewBrandResponse } from "@/modules/brands"
 import { revalidatePath } from "next/cache"
 
 
-export const createNewBrand = async (nombre:string, descripcion: string | undefined) => {
+export const createNewBrand = async (name:string, description: string | undefined) => {
 
     try {
         
-        const { data } = await apiDb.post<CreateNewBrandResponse>("/brands", { nombre, descripcion })
+        const { data } = await apiDb.post<CreateNewBrandResponse>("/brands", { name, description })
 
         revalidatePath('/admin/inventory/brands');
 

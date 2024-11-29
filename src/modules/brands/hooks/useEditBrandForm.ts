@@ -12,20 +12,20 @@ export const useEditBrandForm = (brand: Brand, onClose: () => void) => {
         setIsLoading(true);
 
         const form = e.target as HTMLFormElement;
-        const nombre = form.elements.namedItem('nombre') as HTMLInputElement;
-        const descripcion = form.elements.namedItem('descripcion') as HTMLInputElement;
+        const name = form.elements.namedItem('name') as HTMLInputElement;
+        const description = form.elements.namedItem('description') as HTMLInputElement;
 
-        if (nombre.value.trim() === '') {
+        if (name.value.trim() === '') {
             toast.warning("Debe agregar un nombre");
             setIsLoading(false);
             return;
         }
 
-        const { data, error } = await editBrand(brand.id, nombre.value, descripcion.value);
+        const { data, error } = await editBrand(brand.id, name.value, description.value);
 
         if (error) {
-            nombre.value = "";
-            descripcion.value = "";
+            name.value = "";
+            description.value = "";
 
             toast.error("Ocurrió un error", {
                 description: error
@@ -34,8 +34,8 @@ export const useEditBrandForm = (brand: Brand, onClose: () => void) => {
             return;
         }
 
-        nombre.value = "";
-        descripcion.value = "";
+        name.value = "";
+        description.value = "";
 
         toast.success(data?.message);
         setIsLoading(false);

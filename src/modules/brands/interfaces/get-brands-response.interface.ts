@@ -5,8 +5,7 @@ export interface GetBrandsResponse {
     meta:   Meta;
 }
 
-
-export interface Meta {
+interface Meta {
     total:    number;
     page:     number;
     lastPage: number;

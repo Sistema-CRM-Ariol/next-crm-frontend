@@ -12,28 +12,28 @@ export const useNewBrandForm = () => {
         setIsLoading(true);
 
         const form = e.target as HTMLFormElement;
-        const nombre = form.elements.namedItem('nombre') as HTMLInputElement;
-        const descripcion = form.elements.namedItem('descripcion') as HTMLInputElement;
+        const name = form.elements.namedItem('name') as HTMLInputElement;
+        const description = form.elements.namedItem('description') as HTMLInputElement;
 
-        if (nombre.value.trim() === '') {
+        if (name.value.trim() === '') {
             toast.warning("Debe agregar un nombre");
             setIsLoading(false);
             return;
         }
 
-        const { data, error } = await createNewBrand(nombre.value, descripcion.value);
+        const { data, error } = await createNewBrand(name.value, description.value);
 
         if (error) {
-            nombre.value = "";
-            descripcion.value = "";
+            name.value = "";
+            description.value = "";
             
             toast.error(error);
             setIsLoading(false);
             return;
         }
 
-        nombre.value = "";
-        descripcion.value = "";
+        name.value = "";
+        description.value = "";
 
         toast.success(data?.message || 'Marca registrada exitosamente');
         setIsLoading(false);

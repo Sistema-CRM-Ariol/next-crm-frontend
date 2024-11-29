@@ -1,7 +1,7 @@
 "use server"
 
 import apiDb from "@/lib/apiDb";
-import { GetBrandsResponse } from "../interfaces/get-brands-response";
+import { GetBrandsResponse } from "../interfaces/get-brands-response.interface";
 
 
 export const getBrands = async ( page: number = 1, limit: number = 10, search: string | undefined = undefined ) => {

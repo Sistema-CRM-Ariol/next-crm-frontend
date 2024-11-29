@@ -18,5 +18,5 @@ export { EditBrandModal } from "./components/brand-table/EditBrandModal";
 
 // INTERFACES
 export type { Brand } from './interfaces/brand';
-export type { GetBrandsResponse } from './interfaces/get-brands-response';
+export type { GetBrandsResponse } from './interfaces/get-brands-response.interface';
 export type { CreateNewBrandResponse } from './interfaces/create-new-brand-response';
