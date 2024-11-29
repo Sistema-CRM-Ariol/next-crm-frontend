@@ -10,7 +10,7 @@ export default async function ClientPage({ params }: Props) {
 
     const id = (await params).id;
 
-    const { data, error } = await getClientById(id);
+    const { data: client, error } = await getClientById(id);
 
     if (error) throw new error;
 
@@ -25,7 +25,7 @@ export default async function ClientPage({ params }: Props) {
 
             <section className="pt-8">
                 <div className="container grid grid-cols-12 justify-start gap-4">
-                    <ClientProfileCard client={data?.client!} />
+                    <ClientProfileCard client={client!} />
                     <CustomerTaskTable />
                     <ClientTopPurchases />
                 </div>
