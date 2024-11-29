@@ -25,6 +25,10 @@
     .btn-gradient {
         @apply bg-gradient-to-r from-primary-400 to-secondary-600 text-white
     }
+
+    .modal__header {
+        @apply flex-col gap-2 items-center uppercase
+    }
 }
 
 @layer utilities {
@@ -78,7 +82,7 @@
 
     /* SIDE MENU */
     .sidemenu {
-        @apply max-w-72 w-full bg-white h-screen px-8 pt-6 pb-8
+        @apply max-w-72 xl:max-w-[350px] w-full bg-white h-screen px-8 pt-6 pb-8
     }
 
     .sidemenu__logo {
@@ -161,4 +165,30 @@
     .customer__task--table {
         @apply bg-white p-4 col-span-8
     }
+
+    /* PRODUCTS */
+    .product__details--container {
+        @apply container bg-white p-8 rounded-md grid grid-cols-12
+    }
+
+    .product__details--image {
+        @apply col-span-12 lg:col-span-4 xl:col-span-6 2xl:col-span-4
+    }
+
+    .product__details--description {
+        @apply col-span-12 lg:col-span-8 xl:col-span-6 2xl:col-span-8 space-y-6
+    }
+
+    .product__details--prices {
+        @apply flex flex-col lg:flex-row gap-4
+    }
+
+    .product__details--priceSale {
+        @apply bg-green-100/45 py-4 px-6 flex items-center gap-4
+    }
+
+    .product__details--pricePurchase {
+        @apply bg-indigo-100/45 py-4 px-6 flex items-center gap-4
+    }
+
 }

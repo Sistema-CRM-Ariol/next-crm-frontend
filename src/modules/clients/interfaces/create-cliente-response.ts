@@ -1,6 +1,6 @@
-import { IClientsResponse } from "./get-clients-response.interface";
+import { GetClientsResponse } from "./get-clients-response.interface";
 
-export interface ICreateClientResponse {
+export interface CreateClientResponse {
     message: string;
-    client:  IClientsResponse;
+    client:  GetClientsResponse;
 }

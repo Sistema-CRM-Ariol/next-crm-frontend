@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import apiDb from "@/lib/apiDb";
 import { handleActionError } from "@/lib";
 
-import { ICreateClientResponse } from "@/modules/clients";
+import { CreateClientResponse } from "@/modules/clients";
 
 
 export interface CreateClientOptions {
@@ -24,7 +24,7 @@ export interface CreateClientOptions {
 export const createClient = async (client: CreateClientOptions) => {
     try {
         
-        const { data } = await apiDb.post<ICreateClientResponse>('/clients', client);
+        const { data } = await apiDb.post<CreateClientResponse>('/clients', client);
 
         revalidatePath('/admin/contacts/clients');
 

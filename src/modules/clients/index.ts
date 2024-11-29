@@ -8,7 +8,7 @@ export { scheduleAppointmentWithClient } from './actions/schedule-appointment-wi
 
 // INTERFACES
 export type { IClient } from './interfaces/client';
-export type { ICreateClientResponse } from './interfaces/create-cliente-response';
+export type { CreateClientResponse } from './interfaces/create-cliente-response';
 export type { GetClientsResponse } from './interfaces/get-clients-response.interface';
 export type { SimpleClient } from './interfaces/simple-client.interface';
 
