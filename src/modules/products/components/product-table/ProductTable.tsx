@@ -1,15 +1,16 @@
 "use client"
+import Link from 'next/link';
 import Image from 'next/image';
 import NotImageFound from '@/assets/images/not-image.jpg'
 
-import { formatDate, tableClassNames } from '@/lib';
-import { DeleteProductModal, GetProductsResponse } from '@/modules/products'
-import { TablePaginationButtons, TableTitle } from '@/modules/shared';
+import { formatDate, tableClassNames, formatCurrencyToBolivians } from '@/lib';
 
-import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react';
-import { formatCurrencyToBolivians } from '../../../../lib/format-currency-to-bolivians';
-import Link from 'next/link';
+import { TablePaginationButtons } from '@/modules/shared';
+import { DeleteProductModal, GetProductsResponse } from '@/modules/products'
+
 import { EyeIcon } from 'hugeicons-react';
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react';
+import { ProductTableHeader } from './ProductTableHeader';
 
 
 interface Props {
@@ -24,7 +25,7 @@ export const ProductTable = ({ productsResponse }: Props) => {
         <section className='container pt-8'>
             <Table
                 classNames={tableClassNames}
-                topContent={<TableTitle title="Productos" description='Gestiona los productos de tu empresa' placeholder='Buscar producto' />}
+                topContent={<ProductTableHeader />}
                 bottomContent={<TablePaginationButtons totalPages={meta.lastPage} page={meta.page} />}
                 aria-label="Brand table"
             >
@@ -62,16 +63,16 @@ export const ProductTable = ({ productsResponse }: Props) => {
                                 <TableCell>{formatDate(product.createdAt)}</TableCell>
                                 <TableCell>{formatDate(product.updatedAt)}</TableCell>
                                 <TableCell>
-                                    <Link href={`/admin/inventory/products/${ product.slug }`}>
+                                    <Link href={`/admin/inventory/products/${product.slug}`}>
                                         <Button
                                             isIconOnly
-                                            startContent={<EyeIcon size={18}/> }
+                                            startContent={<EyeIcon size={18} />}
                                             color='primary'
                                             variant='light'
                                             size='sm'
                                         />
                                     </Link>
-                                    <DeleteProductModal product={product}/>
+                                    <DeleteProductModal product={product} />
                                 </TableCell>
                             </TableRow>
 

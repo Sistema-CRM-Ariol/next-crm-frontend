@@ -26,7 +26,7 @@ export const TableTitle = ({ description, placeholder, title }: Props) => {
 
 
     return (
-        <div>
+        <div className='w-full'>
             <div className='mb-4'>
                 <h1>{ title }</h1>
                 <p className='text-sm'>{ description }</p>

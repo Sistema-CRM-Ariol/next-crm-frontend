@@ -5,13 +5,10 @@ import { getCategories } from "@/modules/categories";
 
 export default async function NewProductPage() {
 
-    const getBrandsPromise = getBrands();
-    const getCategoriesPromise = getCategories();
-    // const getBrandsPromise = getBrands();
+    const getBrandsPromise = getBrands(1, 100);
+    const getCategoriesPromise = getCategories(1, 100);
 
     const [{ brands }, { categories }] = await Promise.all([getBrandsPromise, getCategoriesPromise]);
-    console.log({brands, categories});
-
 
     return (
         <>  
