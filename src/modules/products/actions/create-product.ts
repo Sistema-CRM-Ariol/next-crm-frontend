@@ -1,32 +1,33 @@
 "use server"
 
-import apiDb from "@/lib/apiDb"
-import { isAxiosError } from "axios";
+import { handleActionError } from "@/lib";
+import apiDb from "@/lib/apiDb";
 
 
-export const createProduct = async (formData: FormData) => {
+interface CreateProductOptions {
+    name: string;
+    description: string;
+    serialNumber: string;
+    // image: string;
+    pricePurchase: number;
+    priceSale: number;
+    brandId: string;
+    providerId: string;
+    categoryId: string;
+}
+
+
+export const createProduct = async (product: CreateProductOptions) => {
 
     try {
-    
-        console.log(formData)    
-        // const { data } = await apiDb.post('');
-
+        const { data } = await apiDb.post('/products', product);
+        
         return {
-            data: {message: "Hola"}, 
+            data,
             error: null
         }
 
     } catch (error) {
-
-        console.log(error)
-
-        if(isAxiosError(error)){
-            return {
-                data: null,
-                error: error.response?.data.message,
-            }
-        }
-
-        throw new Error("Error en el servidor, revisar logs del sistema")
+        return handleActionError(error);
     }
 }

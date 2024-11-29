@@ -8,20 +8,23 @@ import { Autocomplete, AutocompleteItem } from '@nextui-org/autocomplete';
 import { Category } from '@/modules/categories';
 import { Brand } from '@/modules/brands';
 import { useNewProductForm } from '../../hooks/useNewProductForm';
+import { Provider } from '@/modules/providers';
+import { Select, SelectItem } from '@nextui-org/react';
 
 
 interface Props {
     brands: Brand[];
+    providers: Provider[]
     categories: Category[];
 }
 
-export const NewProductForm = ({ categories, brands }: Props) => {
+export const NewProductForm = ({ categories, brands, providers }: Props) => {
 
     const { handleSubmit, isLoading } = useNewProductForm();
 
     return (
         <section className='pt-8'>
-            <form onSubmit={ handleSubmit } className='container bg-white p-6 pt-8 pb-10 rounded-sm'>
+            <form onSubmit={handleSubmit} className='container bg-white p-6 pt-8 pb-10 rounded-sm'>
                 <div className="grid grid-cols-2 gap-y-8 gap-4">
 
                     <Input
@@ -41,6 +44,7 @@ export const NewProductForm = ({ categories, brands }: Props) => {
                         classNames={fullInputWrapper}
                         startContent={<SecurityValidationIcon size={20} />}
                         placeholder='#ABC-123'
+                        
                         label="Numero de Serie"
                         name='serialNumber'
                         labelPlacement='outside'
@@ -81,37 +85,64 @@ export const NewProductForm = ({ categories, brands }: Props) => {
                         labelPlacement='outside'
                     />
 
-                    <Autocomplete
+                    <Select
+                        size='lg'
+                        name='categoryId'
                         label="Categorias"
                         labelPlacement='outside'
-                        size='lg'
                         placeholder="Selecciona una categoria"
-                        defaultItems={categories}
-                        name='categoryId'
+                        items={categories}
+                        listboxProps={{
+                            emptyContent: 'No se encontraron categorias.'
+                        }}
                     >
                         {(category) => (
-                            <AutocompleteItem value={category.id} key={category.id}>
+                            <SelectItem  value={category.id} key={category.id}>
                                 {category.name}
-                            </AutocompleteItem>
+                            </SelectItem>
                         )}
 
-                    </Autocomplete>
+                    </Select>
 
-                    <Autocomplete
-                        label="Marcas"
-                        labelPlacement='outside'
+                    <Select
                         size='lg'
+                        label="Marcas"
+                        name='brandId'
+                        items={brands}
+                        labelPlacement='outside'
                         placeholder="Selecciona la marca"
-                        defaultItems={brands}
-                        
+                        listboxProps={{
+                            emptyContent: 'No se encontraron marcas.'
+                        }}
+
                     >
                         {(brand) => (
-                            <AutocompleteItem key={brand.id} value={brand.id}>
-                                {brand.nombre}
-                            </AutocompleteItem>
+                            <SelectItem key={brand.id} value={brand.id}>
+                                {brand.name}
+                            </SelectItem>
                         )}
 
-                    </Autocomplete>
+                    </Select>
+
+                    <Select
+                        size='lg'
+                        label="Proveedor"
+                        labelPlacement='outside'
+                        placeholder="Selecciona la marca"
+                        name='providerId'
+                        items={providers}
+                        listboxProps={{
+                            emptyContent: 'No se encontraron marcas.'
+                        }}
+
+                    >
+                        {(provider) => (
+                            <SelectItem key={provider.id} value={provider.id}>
+                                {provider.name}
+                            </SelectItem>
+                        )}
+
+                    </Select>
                 </div>
 
                 <Button

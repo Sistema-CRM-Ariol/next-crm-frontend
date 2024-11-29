@@ -1,19 +1,10 @@
 "use server"
 
-import { isAxiosError } from "axios";
-
 import apiDb from "@/lib/apiDb"
 import { GetProvidersResponse } from "@/modules/providers";
 
 
-
-interface GetProvidersHeaders {
-    limit?: number | undefined,
-    page?: number | string | undefined, 
-    search?: string | undefined
-}
-
-export const getProviders = async ({ page = 1, limit = 10, search= undefined }: GetProvidersHeaders ) => {
+export const getProviders = async (page: number = 1, limit: number = 10, search: string | undefined = undefined ) => {
 
 
     try {
