@@ -4,7 +4,7 @@ import { fullInputWrapper } from '@/lib'
 import AriolLogo from '@/assets/images/ariol-logo.png'
 
 import { Button, Divider, Input, Radio, RadioGroup, Textarea } from '@nextui-org/react'
-import { Search01Icon, SentIcon } from 'hugeicons-react'
+import { Download01Icon, Search01Icon, SentIcon } from 'hugeicons-react'
 import { ShoppingCartCard } from './ShoppingCartCard'
 
 
@@ -131,6 +131,13 @@ export const CheckoutForm = () => {
                     fullWidth
                 >
                     Generar transcción
+                </Button>
+                <Button
+                    startContent={<Download01Icon />}
+                    fullWidth
+                    className='bg-indigo-500 text-white'
+                >
+                    Guardan en reporte
                 </Button>
             </div>
 
