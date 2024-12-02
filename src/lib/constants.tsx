@@ -43,21 +43,25 @@ export const aplicationsMenu = [
         ]
     },
     {
-        name: 'Ingresos/Salidas',
-        path: '/admin/transfers',
+        name: 'Business',
+        path: '/admin/business',
         icon: <ChartEvaluationIcon size={18}/>,
         children: [
             {
-                name: 'Ventas',
-                path: '/admin/transfers/sales',
+                name: 'Ventas', // Mantienes el nombre
+                path: '/admin/business/sales', // Actualizas el path base con "business"
             },
             {
-                name: 'Cotizaciones',
-                path: '/admin/transfers/quotes',
+                name: 'Cotizaciones', 
+                path: '/admin/business/quotes', // Actualizas el path base con "business"
             },
             {
-                name: 'Compras',
-                path: '/admin/transfers/purchases',
+                name: 'Tienda POS', 
+                path: '/admin/business/ecommerce',
+            },
+            {
+                name: 'Carrito', 
+                path: '/admin/business/ecommerce/cart',
             }
         ]
     },

@@ -21,7 +21,6 @@ export const AppsMenuItems = () => {
     return (
 
         <Accordion
-            as='ul'
             showDivider={false}
             className='!px-0 space-y-4'
             itemClasses={itemClasses}
@@ -29,7 +28,6 @@ export const AppsMenuItems = () => {
             {
                 aplicationsMenu.map(item => (
                     <AccordionItem
-                        // as='li'
                         startContent={item.icon}
                         key={item.path}
                         title={item.name}

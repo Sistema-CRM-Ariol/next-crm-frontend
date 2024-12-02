@@ -10,7 +10,7 @@ import { Button, Input } from '@nextui-org/react'
 interface Props {
     title: string;
     description: string;
-    placeholder: string;
+    placeholder?: string;
 }
 
 
@@ -28,31 +28,37 @@ export const TableTitle = ({ description, placeholder, title }: Props) => {
     return (
         <div className='w-full'>
             <div className='mb-4'>
-                <h1>{ title }</h1>
-                <p className='text-sm'>{ description }</p>
+                <h1>{title}</h1>
+                <p className='text-sm'>{description}</p>
             </div>
-            <div className="flex flex-col gap-4">
-                <div className="flex justify-between gap-3 items-end">
-                    <div className='flex w-full'>
-                        <Input
-                            value={searchInput}
-                            onChange={e => setSearchInput(e.target.value)}
-                            classNames={fullInputWrapper}
-                            placeholder={placeholder}
-                            size="md"
-                            className='max-w-sm w-full'
+            {
+                placeholder
+                && (
 
-                        />
+                    <div className="flex flex-col gap-4">
+                        <div className="flex justify-between gap-3 items-end">
+                            <div className='flex w-full'>
+                                <Input
+                                    value={searchInput}
+                                    onChange={e => setSearchInput(e.target.value)}
+                                    classNames={fullInputWrapper}
+                                    placeholder={placeholder}
+                                    size="md"
+                                    className='max-w-sm w-full'
 
-                        <Button
-                            isIconOnly
-                            onPress={handleSearch}
-                            startContent={<Search01Icon size={16}/>}
-                        />
-                            
+                                />
+
+                                <Button
+                                    isIconOnly
+                                    onPress={handleSearch}
+                                    startContent={<Search01Icon size={16} />}
+                                />
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                )
+            }
         </div>
     )
 }

@@ -3,6 +3,9 @@ export { NewProductForm } from "./components/new-product-form/NewProductForm";
 export { ProductTable } from './components/product-table/ProductTable';
 export { DeleteProductModal } from "./components/product-table/DeleteProductModal";
 export { ProductDetailsCard } from "./components/ProductDetailsCard";
+export { FilterProductsStore } from "./components/FilterProductsStore";
+export { ProductCard } from "./components/ProductCard";
+
 
 
 // ACTIONS

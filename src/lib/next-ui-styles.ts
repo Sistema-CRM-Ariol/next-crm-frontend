@@ -11,7 +11,7 @@ export const fullInputWrapper = {
 }
 
 export const tableClassNames = {
-    wrapper: ["bg-white", "rounded-md", "shadow-none"],
+    wrapper: ["bg-white", "rounded-md", "shadow-none", 'p-6'],
     th: ["bg-transparent", "text-default-500", "border-b", "border-divider", "text-base"],
     tr: ["hover:bg-gray-400/10", "cursor-pointer", "transition-all"]
 };
