@@ -54,18 +54,10 @@ export const NewClientForm = ({ companies }: Props) => {
             nit: nit.value,
             phones,
             emails,
-            companyId: companyId.value
+            companyId: companyId.value.trim() === '' ? null : companyId.value
         }
 
         const { error, data } = await createClient(newClient);
-
-        if (Object.values(newClient).includes('')) {
-            toast.error("Ocurrio un error", {
-                description: "Debe llenar los campos obligatorios"
-            });
-            setIsLoading(false);
-            return;
-        }
 
         if (error) {
             toast.error("Ocurrio un error", {

@@ -3,14 +3,15 @@ import { NewClientsChart } from '../../../modules/clients/components/charts/NewC
 
 export default async function DashboardPage() {
 
-    const { data } = await getClientsStats('monthly')
+    const { data } = await getClientsStats()
 
     return (
 
         <div>
             <h1>Hello Page</h1>
             {/* <div id="chart"></div> */}
-            <NewClientsChart dates={ data!.dates } numberOfClients={data!.numberOfClients}></NewClientsChart>
+            <NewClientsChart numberOfClients={data!.numberOfClients} />
+
         </div>
     );
 }

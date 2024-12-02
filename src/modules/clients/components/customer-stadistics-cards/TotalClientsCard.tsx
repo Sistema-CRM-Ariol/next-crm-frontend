@@ -7,7 +7,7 @@ interface Props {
 
 export const TotalClientsCard = ({ totalClients }: Props) => {
     return (
-        <div className='bg-white rounded-lg p-6 max-w-[300px] flex items-center justify-between'>
+        <div className='bg-white rounded-lg p-6 w-full max-w-[300px] flex items-center justify-between'>
             <div>
                 <h3 className='text-gray-500'>Total Clientes</h3>
                 <p className='text-4xl font-semibold text-black'>

@@ -4,15 +4,15 @@ import { handleActionError } from "@/lib";
 import apiDb from "@/lib/apiDb"
 
 
-export const getClientsStats = async (period: 'daily' | 'weekly' | 'monthly' | 'yearly') => {
+export const getClientsStats = async () => {
     try {
-        const { data } = await apiDb.get<{dates: string[], numberOfClients: number[]}>(`/clients/statistics/${period}`);
-
+        const { data } = await apiDb.get<{dates: string[], numberOfClients: number[]}>(`/clients/stadistics`);
 
         return {
             data,
             error: null
         }
+        
     } catch (error) {
         return handleActionError(error)
     }

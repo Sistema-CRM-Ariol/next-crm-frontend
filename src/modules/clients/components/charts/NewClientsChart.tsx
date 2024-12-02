@@ -1,59 +1,75 @@
 "use client"
+
 import Chart from 'react-apexcharts';
-import { formatDate } from '../../../../lib/format-date';
 
 interface Props {
-    dates: string[];
     numberOfClients: number[]
 }
 
-
-export const NewClientsChart = ({ dates, numberOfClients }: Props) => {
-
-    const datesFormat = [];
-
-    dates.map(dates => {
-        datesFormat.push([...])
-    })
-
-    const options: ApexCharts.ApexOptions = {
-        chart: {
-            id: "new-clients-chart",
-        },
-        xaxis: {
-            categories: dates, // Fechas dinámicas desde el servidor
-        },
-        dataLabels: {
-            enabled: false,
-        },
-        stroke: {
-            curve: "smooth",
-        },
-        fill: {
-            type: "gradient",
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.7,
-                opacityTo: 0.9,
-                stops: [0, 90, 100],
-            },
-        },
-    };
-
+export const NewClientsChart = ({ numberOfClients }: Props) => {
+    const totalNewClients = numberOfClients.reduce((sum, count) => sum + count, 0);
+    
     const series = [
         {
-            name: "Nuevos Usuarios",
+            name: "Nuevos clientes",
             data: numberOfClients, // Datos directamente desde el servidor
         },
     ];
 
-    return (
-        <div className='bg-white p-4 rounded-md max-w-md'>
+    const spark1: ApexCharts.ApexOptions = {
+        chart: {
+            id: 'spark1',
+            group: 'sparks',
+            sparkline: {
+                enabled: true
+            },
+            dropShadow: {
+                enabled: true,
+                top: 1,
+                left: 1,
+                blur: 2,
+                opacity: 0.5,
+            }
+        },
+        stroke: {
+            curve: 'smooth'
+        },
+        markers: {
+            size: 0
+        },
+        colors: ['#3a65f7'],
+        tooltip: {
+            x: {
+                show: false
+            },
+            y: {
+                title: {
+                    formatter: function formatter(val: any) {
+                        return '';
+                    }
+                }
+            }
+        }
+    }
 
+
+
+
+    return (
+        <div className='bg-white rounded-lg p-6 max-w-lg flex gap-4 items-center justify-between'>
+
+            <div>
+                <h3 className='text-gray-500'>Nuevos clientes <br />este mes</h3>
+                <p className='text-4xl font-semibold text-black'>
+                    {totalNewClients} <span className='text-gray-400 text-sm font-normal'>registrados</span>
+                </p>
+            </div>
             <Chart
-                options={options}
+                height={100}
+                options={spark1}
                 series={series}
-                type="area"
+                width={250}
+                type="line"
             />
         </div>
     )

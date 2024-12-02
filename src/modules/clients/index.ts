@@ -22,6 +22,7 @@ export { TotalClientsCard } from './components/customer-stadistics-cards/TotalCl
 export { ClientProfileCard } from './components/ClientProfileCard';
 export { CustomerTaskTable } from "./components/CustomerTaskTable";
 export { ClientTableHeader } from './components/client-table/ClientTableHeader';
+export { NewClientsChart } from './components/charts/NewClientsChart';
 
 
 
