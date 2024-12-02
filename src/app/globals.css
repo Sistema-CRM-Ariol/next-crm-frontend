@@ -191,4 +191,16 @@
         @apply bg-indigo-100/45 py-4 px-6 flex items-center gap-4
     }
 
+    /* TRANSCTIONS */
+    .checkout__form {
+        @apply bg-white p-6 rounded-md grid grid-cols-12 gap-6
+    }
+    
+    .checkout__form--details {
+        @apply grid grid-cols-12 gap-6 col-span-12 xl:col-span-8 start-0
+    }
+
+    .checkout__form--panel {
+        @apply col-span-12 xl:col-span-4 sticky top-4 space-y-4
+    }
 }

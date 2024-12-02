@@ -1,11 +1,13 @@
 "use client"
-
-import NotFoundImage from '@/assets/images/not-image.jpg'
-import { SimpleProduct } from "../interfaces/simple-product.interface"
-import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from 'next/image';
-import { formatCurrencyToBolivians } from '../../../lib/format-currency-to-bolivians';
+import { formatCurrencyToBolivians } from '@/lib';
+
+import { useCartStore } from '@/modules/business';
+import { SimpleProduct } from "@/modules/products"
+import NotFoundImage from '@/assets/images/not-image.jpg'
+
 import { ShoppingCart01Icon } from 'hugeicons-react';
+import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 
 
 
@@ -14,6 +16,8 @@ interface Props {
 }
 
 export const ProductCard = ({ product }: Props) => {
+    const { addProductToCart } = useCartStore();
+
     return (
         <Card shadow='none' isPressable className="py-4">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start justify-center">
@@ -36,6 +40,7 @@ export const ProductCard = ({ product }: Props) => {
                     color='primary'
                     variant='light'
                     className='max-w-max mx-auto mt-4'
+                    onPress={() => addProductToCart(product)}
                 >
                     Agregar al carrito
                 </Button>

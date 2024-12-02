@@ -11,7 +11,6 @@ export const getProductDetails = async (slug: string) => {
     try {
         
         const { data } = await apiDb.get<{ product: Product }>(`/products/${ slug }`);
-        console.log(data)
         return {
             data: data.product,
             error: null,

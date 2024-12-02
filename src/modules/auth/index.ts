@@ -6,7 +6,7 @@ export { loginUser } from "./actions/login-user";
 export { useLoginUser } from "./hooks/useLoginUser";
 
 // INTERFACES
-export type { User } from "@nextui-org/react";
+export type { User } from "./interfaces/user.interface";
 export type { LoginUserResponse } from './interfaces/login-user-response.interface';
 
 // COMPONENTS

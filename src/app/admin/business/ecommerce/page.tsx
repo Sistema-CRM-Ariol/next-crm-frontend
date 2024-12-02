@@ -1,5 +1,4 @@
-import { FilterProductsStore, getProducts } from "@/modules/products";
-import { ProductCard } from "@/modules/products/components/ProductCard";
+import { FilterProductsStore, getProducts, ProductCard } from "@/modules/products";
 
 export default async function EcommercePage() {
 

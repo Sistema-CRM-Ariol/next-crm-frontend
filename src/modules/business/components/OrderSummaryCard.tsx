@@ -3,9 +3,13 @@
 import { formatCurrencyToBolivians, tableClassNames } from '@/lib';
 
 import { TableTitle } from '@/modules/shared';
+import { useCartStore } from '../stores/cart.store';
 import { Table, TableHeader, TableColumn, TableBody, TableCell, TableRow } from '@nextui-org/react';
 
 export const OrderSummaryCard = () => {
+
+    const { total } = useCartStore();
+
     return (
         <Table
             classNames={tableClassNames}
@@ -30,7 +34,7 @@ export const OrderSummaryCard = () => {
 
                 <TableRow>
                     <TableCell><span className='font-bold'>Total</span></TableCell>
-                    <TableCell><span>{formatCurrencyToBolivians(510)}</span></TableCell>
+                    <TableCell><span>{formatCurrencyToBolivians(total)}</span></TableCell>
                 </TableRow>
             </TableBody>
         </Table>

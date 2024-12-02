@@ -1,4 +1,4 @@
-import { OrderSummaryCard, ShoppingCartCard } from "@/modules/cart";
+import { OrderSummaryCard, ShoppingCartCard } from "@/modules/business";
 
 
 export default function CartPage() {

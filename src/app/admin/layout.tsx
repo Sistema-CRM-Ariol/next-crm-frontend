@@ -11,6 +11,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         redirect('/auth/login');
     }
 
+
+
     return (
         <>
             <div className="admin-layout">
@@ -24,7 +26,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
                 />
                 <SideMenu />
                 <main className="w-full h-screen overflow-y-auto pb-10 relative">
-                    <NavMenu />
+                    <NavMenu user={ isValidToken.user } />
                     {children}
                 </main>
             </div>

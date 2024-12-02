@@ -17,13 +17,13 @@ export const validateToken = async () => {
 
     try {
 
-        await apiDb.get<LoginUserResponse>('/auth/verify', {
+        const { data } = await apiDb.get<LoginUserResponse>('/auth/verify', {
             headers: {
                 Authorization: 'Bearer ' + token,
             }
         })
 
-        return true;
+        return data;
 
     } catch (error) {
         return false;

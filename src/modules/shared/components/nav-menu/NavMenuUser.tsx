@@ -1,7 +1,12 @@
 "use client"
+import { type User as IUser } from '@/modules/auth'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from '@nextui-org/react'
 
-export const NavMenuUser = () => {
+interface Props {
+    user: IUser
+}
+
+export const NavMenuUser = ({ user }: Props) => {
     return (
         <Dropdown placement="bottom-start">
             <DropdownTrigger>
@@ -10,11 +15,11 @@ export const NavMenuUser = () => {
                     avatarProps={{
                         size:"sm",
                         isBordered: true,
-                        src: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+                        src: user.avatar ? user.avatar : undefined,
                     }}
                     className="transition-transform"
-                    description="admin@ariol.com"
-                    name="Tony Reichert"
+                    description={ user.email }
+                    name={ `${ user.name } ${user.lastname}` }
                     
                 />
             </DropdownTrigger>
