@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { NewProviderForm, ProviderTable, getProviders } from "@/modules/providers"
 
 type Params = Promise<{ page: string }>
-type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+type SearchParams = Promise<{ [key: string]: string | number | undefined }>
 
 
 
@@ -13,10 +13,11 @@ export default async function ProvidersPage(props: {
 
     const searchParams = await props.searchParams
 
-    const getProvidersResponse = await getProviders({
-        search: searchParams.query as string,
-        page: searchParams.page as string,
-    });
+    const getProvidersResponse = await getProviders(
+        searchParams.page as number,
+        searchParams.limit as number,
+        searchParams.query as string,
+    );
     return (
         <>
             <NewProviderForm/>
