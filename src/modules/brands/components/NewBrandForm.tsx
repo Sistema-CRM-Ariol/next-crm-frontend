@@ -3,7 +3,7 @@
 import { fullInputWrapper } from '@/lib'
 import { useNewBrandForm } from '@/modules/brands';
 
-import { Button, Input } from '@nextui-org/react'
+import { Button, Input } from "@heroui/react"
 
 export const NewBrandForm = () => {
 

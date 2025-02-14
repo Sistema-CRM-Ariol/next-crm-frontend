@@ -1,4 +1,4 @@
-import { Button, Divider, Popover, PopoverContent, PopoverTrigger } from '@nextui-org/react';
+import { Button, Divider, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
 import { InformationCircleIcon } from 'hugeicons-react';
 
 

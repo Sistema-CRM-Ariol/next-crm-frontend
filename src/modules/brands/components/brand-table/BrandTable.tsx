@@ -4,7 +4,7 @@ import { formatDate, tableClassNames } from '@/lib';
 import { GetBrandsResponse, EditBrandModal, DeleteBrandModal} from '@/modules/brands';
 import { TablePaginationButtons, TableTitle } from '@/modules/shared';
 
-import { TableHeader, TableColumn, TableBody, TableRow, TableCell, Table } from '@nextui-org/react';
+import { TableHeader, TableColumn, TableBody, TableRow, TableCell, Table } from "@heroui/react";
 
 
 interface Props {

@@ -4,7 +4,7 @@ import { fullInputWrapper } from '@/lib';
 import { useEditBrandForm } from '@/modules/brands';
 
 import { Edit02Icon } from 'hugeicons-react';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input } from "@heroui/react";
 import { Category, useEditCategoryForm } from '@/modules/categories';
 
 

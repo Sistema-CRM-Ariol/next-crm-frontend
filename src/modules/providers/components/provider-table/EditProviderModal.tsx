@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 import { fullInputWrapper } from '@/lib';
 import { Provider, useEditProviderForm } from '@/modules/providers';
 
-import { Input } from "@nextui-org/input";
-import { Button } from "@nextui-org/button";
+import { Input } from "@heroui/input";
+import { Button } from "@heroui/button";
 import { Edit02Icon } from 'hugeicons-react';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/react";
 
 
 interface Props {

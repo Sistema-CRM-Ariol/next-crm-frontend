@@ -1,15 +1,15 @@
 "use client"
-import { Button } from '@nextui-org/button';
-import { Input, Textarea } from '@nextui-org/input';
+import { Button } from "@heroui/button";
+import { Input, Textarea } from "@heroui/input";
 import { Dollar01Icon, SecurityValidationIcon, TextIcon } from 'hugeicons-react';
 
 import { fullInputWrapper } from '@/lib';
-import { Autocomplete, AutocompleteItem } from '@nextui-org/autocomplete';
+import { Autocomplete, AutocompleteItem } from "@heroui/autocomplete";
 import { Category } from '@/modules/categories';
 import { Brand } from '@/modules/brands';
 import { useNewProductForm } from '../../hooks/useNewProductForm';
 import { Provider } from '@/modules/providers';
-import { Select, SelectItem } from '@nextui-org/react';
+import { Select, SelectItem } from "@heroui/react";
 
 
 interface Props {

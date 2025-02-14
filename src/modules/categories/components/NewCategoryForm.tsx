@@ -1,7 +1,7 @@
 "use client"
 
 import { fullInputWrapper } from '@/lib';
-import { Button, Input } from '@nextui-org/react';
+import { Button, Input } from "@heroui/react";
 import { useNewCategoryForm } from '@/modules/categories';
 
 export const NewCategoryForm = () => {

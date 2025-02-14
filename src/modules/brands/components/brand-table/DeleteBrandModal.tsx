@@ -4,7 +4,7 @@ import { Alert01Icon, Delete02Icon } from 'hugeicons-react';
 
 import { Brand } from '../../interfaces/brand';
 
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@heroui/react";
 import { toast } from 'sonner';
 import { deleteBrand } from '../../actions/delete-brand';
 

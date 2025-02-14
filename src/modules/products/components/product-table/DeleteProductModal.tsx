@@ -2,7 +2,7 @@
 import { SimpleProduct, useDeleteProduct } from '@/modules/products';
 
 import { Alert01Icon, Delete02Icon } from 'hugeicons-react';
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react';
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@heroui/react";
 
 interface Props {
     product: SimpleProduct

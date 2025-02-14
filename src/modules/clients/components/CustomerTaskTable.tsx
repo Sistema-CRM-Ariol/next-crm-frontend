@@ -1,6 +1,6 @@
 "use client"
 import { tableClassNames } from '@/lib'
-import { Chip, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import { Chip, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/react"
 
 export const CustomerTaskTable = () => {
     return (

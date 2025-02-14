@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { fullInputWrapper } from '@/lib'
 
 import { Search01Icon } from 'hugeicons-react'
-import { Button, Input } from '@nextui-org/react'
+import { Button, Input } from "@heroui/react"
 
 export const BrandTableHeader = () => {
 

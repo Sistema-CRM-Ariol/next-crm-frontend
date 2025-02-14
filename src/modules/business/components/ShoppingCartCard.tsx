@@ -5,7 +5,7 @@ import { TableTitle } from '@/modules/shared';
 import { useCartStore } from '../stores/cart.store';
 import { formatCurrencyToBolivians, tableClassNames } from '@/lib';
 import { Add01Icon, CheckmarkBadge01Icon, Delete01Icon, MinusSignIcon } from 'hugeicons-react';
-import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react';
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/react";
 
 
 export const ShoppingCartCard = () => {

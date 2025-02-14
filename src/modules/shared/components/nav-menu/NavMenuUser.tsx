@@ -1,6 +1,6 @@
 "use client"
 import { type User as IUser } from '@/modules/auth'
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from '@nextui-org/react'
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from "@heroui/react"
 
 interface Props {
     user: IUser

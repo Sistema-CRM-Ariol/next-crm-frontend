@@ -7,7 +7,7 @@ import { ClientTableDeleteAction } from './ClientTableDeleteAction';
 import { ButtonScheduleAppointment, type GetClientsResponse, ClientTableHeader } from '@/modules/clients';
 
 import { EyeIcon } from 'hugeicons-react';
-import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/react"
 
 
 

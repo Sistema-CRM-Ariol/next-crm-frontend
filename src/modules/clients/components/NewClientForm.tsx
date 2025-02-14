@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import { fullInputWrapper } from '@/lib'
 
-import { Button, Input, Select, SelectItem } from '@nextui-org/react'
+import { Button, Input, Select, SelectItem } from "@heroui/react"
 import { Delete01Icon, Gps01Icon, IdentificationIcon, Invoice01Icon, Mail01Icon, SmartPhone01Icon, UserIcon } from 'hugeicons-react'
 import { useRouter } from 'next/navigation'
 import { Company } from '@/modules/companies'

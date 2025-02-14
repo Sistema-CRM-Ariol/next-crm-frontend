@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { Pagination } from '@nextui-org/react';
+import { Pagination } from "@heroui/react";
 
 
 interface Props {

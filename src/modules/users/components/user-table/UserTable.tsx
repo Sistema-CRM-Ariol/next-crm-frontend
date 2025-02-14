@@ -1,7 +1,7 @@
 "use client"
 import { formatDate, tableClassNames } from '@/lib'
 import { TableTitle } from '@/modules/shared'
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table'
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
 
 export const UserTable = () => {
 

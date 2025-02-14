@@ -3,7 +3,7 @@ import { formatDate, tableClassNames } from '@/lib'
 
 import { GetCompaniesResponse } from '@/modules/companies'
 import { TablePaginationButtons, TableTitle } from '@/modules/shared'
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/react"
 import { DeleteCompanyModal } from './DeleteCompanyModal'
 
 interface Props {

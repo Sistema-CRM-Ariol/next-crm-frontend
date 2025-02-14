@@ -7,7 +7,7 @@ import { SimpleProduct } from "@/modules/products"
 import NotFoundImage from '@/assets/images/not-image.jpg'
 
 import { ShoppingCart01Icon } from 'hugeicons-react';
-import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
+import { Button, Card, CardBody, CardHeader } from "@heroui/react";
 
 
 

@@ -3,8 +3,8 @@ import { useRouter } from 'next/navigation'
 
 import { fullInputWrapper } from '@/lib'
 
-import { Input } from '@nextui-org/input'
-import { Button } from '@nextui-org/button'
+import { Input } from "@heroui/input"
+import { Button } from "@heroui/button"
 import { Search01Icon } from 'hugeicons-react'
 import { useState } from 'react'
 

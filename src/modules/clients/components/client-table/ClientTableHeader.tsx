@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 
 import { TableTitle } from '@/modules/shared'
 
-import { Button } from '@nextui-org/react'
+import { Button } from "@heroui/react"
 import { Download01Icon, PlusSignIcon } from 'hugeicons-react'
 
 export const ClientTableHeader = () => {

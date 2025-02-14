@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { fullInputWrapper } from '@/lib'
 import AriolLogo from '@/assets/images/ariol-logo.png'
 
-import { Button, Divider, Input, Radio, RadioGroup, Textarea } from '@nextui-org/react'
+import { Button, Divider, Input, Radio, RadioGroup, Textarea } from "@heroui/react"
 import { Download01Icon, Search01Icon, SentIcon } from 'hugeicons-react'
 import { ShoppingCartCard } from './ShoppingCartCard'
 

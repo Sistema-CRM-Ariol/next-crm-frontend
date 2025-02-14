@@ -4,7 +4,7 @@ import { formatCurrencyToBolivians, tableClassNames } from '@/lib';
 
 import { TableTitle } from '@/modules/shared';
 import { useCartStore } from '../stores/cart.store';
-import { Table, TableHeader, TableColumn, TableBody, TableCell, TableRow } from '@nextui-org/react';
+import { Table, TableHeader, TableColumn, TableBody, TableCell, TableRow } from "@heroui/react";
 
 export const OrderSummaryCard = () => {
 

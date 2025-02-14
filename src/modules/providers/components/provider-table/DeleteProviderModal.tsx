@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 
 import { useDeleteProvider, type Provider } from '@/modules/providers';
 
-import { Button } from '@nextui-org/button';
+import { Button } from "@heroui/button";
 import { Alert01Icon, Delete02Icon } from 'hugeicons-react';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/modal";
 
 
 

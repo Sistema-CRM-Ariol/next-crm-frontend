@@ -1,4 +1,4 @@
-import { ConfigThemes } from "@nextui-org/react";
+import { ConfigThemes } from "@heroui/react";
 
 export const lightTheme: ConfigThemes = {
     light: {

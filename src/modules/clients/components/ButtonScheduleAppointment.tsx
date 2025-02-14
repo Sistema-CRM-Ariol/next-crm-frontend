@@ -5,7 +5,7 @@ import { getLocalTimeZone, now} from '@internationalized/date';
 
 import { formatDate } from '@/lib';
 import { SimpleClient, scheduleAppointmentWithClient } from '@/modules/clients';
-import { Button, DatePicker, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react'
+import { Button, DatePicker, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@heroui/react"
 
 
 interface Props {

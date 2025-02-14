@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { SimpleClient, deleteClient } from '@/modules/clients';
 
 import { Alert01Icon, Delete02Icon } from 'hugeicons-react';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@heroui/react";
 import { toast } from 'sonner';
 
 interface Props {

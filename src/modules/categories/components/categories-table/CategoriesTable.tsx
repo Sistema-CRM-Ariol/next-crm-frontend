@@ -4,7 +4,7 @@ import { formatDate, tableClassNames } from '@/lib';
 
 
 import { CategoriesTablePagination, CategoryTableHeader, DeleteCategoryModal, EditCategoryModal, GetCategoriesResponse } from '@/modules/categories';
-import { TableHeader, TableColumn, TableBody, TableRow, TableCell, Table } from '@nextui-org/react';
+import { TableHeader, TableColumn, TableBody, TableRow, TableCell, Table } from "@heroui/react";
 
 
 interface Props {

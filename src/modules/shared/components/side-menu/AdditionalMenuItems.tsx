@@ -1,6 +1,6 @@
 import React from 'react'
 import { additionalMenu } from '@/lib'
-import { Button } from '@nextui-org/react'
+import { Button } from "@heroui/react"
 
 export const AdditionalMenuItems = () => {
     return (

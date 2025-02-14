@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation'
 
 import { TableTitle } from '@/modules/shared'
 
-import { Button } from '@nextui-org/button'
+import { Button } from "@heroui/button"
 import { Download01Icon, PlusSignIcon } from 'hugeicons-react'
 
 export const ProductTableHeader = () => {

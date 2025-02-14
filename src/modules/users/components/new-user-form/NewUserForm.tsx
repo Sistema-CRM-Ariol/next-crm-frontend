@@ -1,7 +1,7 @@
 "use client"
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { UserDataForm, RolePermissionSelector, useNewUserForm } from '@/modules/users';
-import { Divider } from "@nextui-org/react";
+import { Divider } from "@heroui/react";
 
 
 

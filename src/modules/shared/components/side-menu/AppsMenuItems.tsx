@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { aplicationsMenu } from '@/lib';
-import { Accordion, AccordionItem, Button } from '@nextui-org/react'
+import { Accordion, AccordionItem, Button } from "@heroui/react"
 
 export const AppsMenuItems = () => {
 

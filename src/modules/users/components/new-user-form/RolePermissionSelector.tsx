@@ -1,5 +1,5 @@
 "use client"
-import { CheckboxGroup, Checkbox } from '@nextui-org/checkbox';
+import { CheckboxGroup, Checkbox } from "@heroui/checkbox";
 
 
 interface Props {

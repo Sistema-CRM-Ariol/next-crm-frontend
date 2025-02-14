@@ -9,7 +9,7 @@ import { TablePaginationButtons } from '@/modules/shared';
 import { DeleteProductModal, GetProductsResponse } from '@/modules/products'
 
 import { EyeIcon } from 'hugeicons-react';
-import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react';
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/react";
 import { ProductTableHeader } from './ProductTableHeader';
 
 

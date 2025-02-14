@@ -1,6 +1,6 @@
 import React from 'react'
 import { principalMenu } from '../../../../lib/constants';
-import { Button } from '@nextui-org/react';
+import { Button } from "@heroui/react";
 
 export const PrincipalMenuItems = () => {
     return (

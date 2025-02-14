@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { Client } from '../interfaces/client'
 import { Call02Icon, City01Icon, DirectionLeft01Icon, IdentityCardIcon, Mail01Icon, Message01Icon, SmartPhone01Icon } from 'hugeicons-react';
-import { Button } from '@nextui-org/react';
+import { Button } from "@heroui/react";
 
 interface Props {
     client: Client;

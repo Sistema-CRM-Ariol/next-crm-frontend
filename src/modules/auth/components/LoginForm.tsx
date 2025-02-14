@@ -6,7 +6,7 @@ import { fullInputWrapper } from '@/lib';
 import { useLoginUser } from '@/modules/auth';
 import { ViewIcon, ViewOffIcon } from '@/modules/shared';
 
-import { Checkbox, Button, Input } from '@nextui-org/react';
+import { Checkbox, Button, Input } from "@heroui/react";
 
 export const LoginForm = () => {
 
