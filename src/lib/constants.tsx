@@ -1,4 +1,4 @@
-import { ChartEvaluationIcon, CheckListIcon, Home01Icon, ProfileIcon, Settings02Icon, Task01Icon, UserIcon, UserMultipleIcon, icons } from 'hugeicons-react';
+import { ChartEvaluationIcon,  Home01Icon,Settings02Icon, Task01Icon, UserIcon, UserMultipleIcon,  } from 'hugeicons-react';
 
 
 export const principalMenu = [
@@ -6,12 +6,7 @@ export const principalMenu = [
         name: 'Dashboard',
         path: '/admin/dashboard',
         icon: <Home01Icon size={18}/>
-    },
-    {
-        name: 'Tareas',
-        path: '/admin/tasks',
-        icon: <CheckListIcon size={18}/>
-    },
+    }
 ]
 
 export const aplicationsMenu = [

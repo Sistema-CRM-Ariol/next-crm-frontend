@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 
 import "./globals.css";
 import { Providers } from '../modules/shared';
 
 
-const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
+const outfit = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
 
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

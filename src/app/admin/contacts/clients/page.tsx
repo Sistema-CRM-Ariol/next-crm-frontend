@@ -10,7 +10,7 @@ export default async function ClientsPage(props: Props) {
 
     const searchParams = await props.searchParams
 
-    const { data } = await getClientsStats()
+    // const { data } = await getClientsStats()
     const clientResponse = await getClients(searchParams.page as number, searchParams.limit as number, searchParams.search as string);
 
     return (
@@ -20,7 +20,7 @@ export default async function ClientsPage(props: Props) {
                     totalClients={clientResponse.meta.total}
                 />
 
-                <NewClientsChart numberOfClients={data!.numberOfClients} />
+                {/* <NewClientsChart numberOfClients={data!.numberOfClients} /> */}
 
             </section>
             <ClientTable

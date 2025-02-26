@@ -16,7 +16,8 @@ export const PrincipalMenuItems = () => {
                             disableRipple
                             
                             href={item.path}
-                            className='sidemenu__principal--item'
+                            // className='sidemenu__principal--item'
+                            className='sidemenu__item'
                             fullWidth
                         >
                             <span className='text-black'>{item.icon}</span>
